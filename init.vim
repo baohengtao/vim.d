@@ -2,8 +2,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/dotfile.vim/bundle/Vundle.vim
-call vundle#begin('vundle')
+set rtp+=~/vim.bundle
+call vundle#begin('~/vim.bundle')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 " let Vundle manage Vundle, required
@@ -25,8 +25,8 @@ filetype plugin indent on    " required
 
 
 syntax enable
-colorscheme dracula
-
+"colorscheme dracula
+set background=dark
 set number
 set guifont=monacoB2:h14
 set nocompatible
