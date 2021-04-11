@@ -1,6 +1,3 @@
-runtime ~/dotfile/vim/vundle.vim
-
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -12,6 +9,7 @@ call vundle#begin('vundle')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'preservim/nerdtree'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "
