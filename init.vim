@@ -26,6 +26,7 @@ filetype plugin indent on    " required
 
 syntax enable
 colorscheme dracula
+
 set number
 set guifont=monacoB2:h14
 set nocompatible
@@ -41,8 +42,8 @@ set shiftwidth=2
 set expandtab
 set softtabstop=2
 set relativenumber
-"set cursorline
 set wrap
+set guicursor=
 set linebreak
 set wrapmargin=2
 set scrolloff=5
