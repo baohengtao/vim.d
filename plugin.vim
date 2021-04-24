@@ -1,15 +1,20 @@
 call plug#begin('~/.plugin/vimplug')
-Plug 'VundleVim/Vundle.vim'
-Plug 'dracula/vim', { 'name': 'dracula' }
+
+"file
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
-Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-fugitive'
-Plug 'chr4/nginx.vim'
+
+
+
+"program language
 Plug 'preservim/nerdcommenter'
-Plug 'jszakmeister/vim-togglecursor'
+Plug 'chr4/nginx.vim'
+
+"beauty
 Plug 'ryanoasis/vim-devicons'
-"Plug 'liuchengxu/vim-which-key'
+Plug 'dracula/vim', { 'name': 'dracula' }
+
+
 call plug#end()
 
