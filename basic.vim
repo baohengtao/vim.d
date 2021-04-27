@@ -8,6 +8,10 @@ set scrolloff=8 " 光标距离边缘的最小行数
 set relativenumber
 set number
 
+" auto load when focus file
+set autoread
+autocmd FocusGained * checktime
+
 " Tab setting
 set tabstop=2  " 设置tab显示宽度
 set softtabstop=2 " 设置按tab键时得到的宽度

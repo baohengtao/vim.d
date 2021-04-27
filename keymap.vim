@@ -1,15 +1,8 @@
 "nnoremap <leader>n :NERDTreeFocus<CR>
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
-nnoremap <leader>ft :NERDTreeToggle<CR>
-nnoremap <leader>ff :Files<CR>
-
-
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-f> :Files<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-
 
 
 

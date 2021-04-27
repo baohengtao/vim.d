@@ -1,32 +1,39 @@
-call plug#begin('~/.plugin/vimplug')
+call plug#begin('$XDG_DATA_HOME/vimplug')
 
-"file
+" file
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
-
+let g:NERDTreeChDirMode = 2 " auto change dir 
 " useful tool
 Plug 'tpope/vim-commentary' " add gc command for commentary
 Plug 'tpope/vim-surround'  " add cs commnad to change surround
+Plug 'lambdalisue/suda.vim' " edit with sudo
 
-"program language
-Plug 'preservim/nerdcommenter'
+" program language
 Plug 'chr4/nginx.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sillybun/vim-repl'
+Plug 'RRethy/vim-hexokinase' " add color to rgb code
+" writing
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do':'cd app && yarn install' }
+Plug 'hotoo/pangu.vim' 
+autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
-"beauty
+" beauty
 Plug 'ryanoasis/vim-devicons'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='violet'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_statusline_ontop=1
+let g:airline_statusline_ontop=0
 
-"better default
+" better default
 Plug 'psliwka/vim-smoothie'
 
 call plug#end()
