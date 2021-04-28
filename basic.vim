@@ -11,6 +11,7 @@ set mouse=a
 set scrolloff=8 " 光标距离边缘的最小行数
 set relativenumber
 set number
+set updatetime=100
 
 " auto load when focus file
 set autoread
