@@ -1,7 +1,6 @@
-runtime parameter.vim
 runtime plugin.vim
 runtime basic.vim
-runtime fzf.vim
+runtime custom.vim
 runtime keymap.vim
 
 

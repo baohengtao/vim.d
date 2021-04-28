@@ -3,6 +3,7 @@ set splitbelow
 set splitright
 set hidden 
 set mouse=a
+set background=dark
 
 " file
 syntax on
