@@ -1,3 +1,7 @@
+"Preference
+set splitbelow
+set splitright
+
 "Personal
 set hidden 
 "Basic setting

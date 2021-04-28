@@ -13,6 +13,8 @@ Plug 'tpope/vim-commentary' " add gc command for commentary
 Plug 'tpope/vim-surround'  " add cs commnad to change surround
 Plug 'lambdalisue/suda.vim' " edit with sudo
 
+" git
+Plug 'airblade/vim-gitgutter'
 " program language
 Plug 'chr4/nginx.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -62,9 +64,6 @@ command! -bang -nargs=? -complete=dir Files
 " Start NERDTree. If a file is specified, move the cursor to its window.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
-" Exit Vim if NERDTree is the only window left.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
 
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'M',
