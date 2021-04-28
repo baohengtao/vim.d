@@ -3,7 +3,6 @@ set splitbelow
 set splitright
 set hidden 
 set mouse=a
-set background=dark
 
 " file
 syntax on
@@ -18,6 +17,8 @@ set scrolloff=8 " 光标距离边缘的最小行数
 set wrap  " wrap lines
 set foldlevelstart=1
 set nofoldenable
+set background=dark
+highlight Pmenu ctermfg=250 ctermbg=000
 
 " reload
 set autoread

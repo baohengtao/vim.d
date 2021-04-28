@@ -20,11 +20,8 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 
 
 " fzf
-let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.5 } }
-let g:fzf_layout = { 'down': '40%' }
+let g:fzf_layout = { 'window': { 'width': 0.75, 'height': 0.75 } }
 let g:fzf_buffers_jump = 1
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 let g:fzf_tags_command = 'ctags -R'
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
-command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>-2)
