@@ -15,6 +15,8 @@ Plug 'lambdalisue/suda.vim' " edit with sudo
 
 " git
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+set statusline+=%{FugitiveStatusline()}
 " program language
 Plug 'chr4/nginx.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -31,10 +33,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='violet'
+let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_statusline_ontop=0
-
 " better default
 Plug 'psliwka/vim-smoothie'
 
