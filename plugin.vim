@@ -1,8 +1,10 @@
 call plug#begin('$XDG_DATA_HOME/vimplug')
 
-" file
+" search
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" file
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -11,16 +13,15 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-commentary' " add gc command for commentary
 Plug 'tpope/vim-surround'  " add cs commnad to change surround
 Plug 'lambdalisue/suda.vim' " edit with sudo
+Plug 'christoomey/vim-tmux-navigator' " navigator
 
 " git
 Plug 'tpope/vim-fugitive'
 set statusline+=%{FugitiveStatusline()}
 
 " program language
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'sillybun/vim-repl'
-Plug 'RRethy/vim-hexokinase' " add color to rgb code
-
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " lsp: autocomplete
+Plug 'kassio/neoterm' " repl: interactive with ipython 
 " writing
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do':'cd app && yarn install' }
