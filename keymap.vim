@@ -1,27 +1,43 @@
+" escape with jk 
+inoremap jk <esc>  
+cnoremap jk <C-C> 
+tnoremap jk <C-\><C-n> 
 " add C-a C-e C-d
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
-inoremap <C-d> <Delete>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
-cnoremap <C-d> <Delete>
+inoremap <esc> <nop>
+inoremap <esc> 
+
 
 " leader key
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
 
 " shortcut
-nnoremap <C-p> :Commands<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :Rg<CR>
+nnoremap <leader>p :Commands<CR>
+nnoremap <leader>t :NERDTreeToggle %<CR>
+nnoremap <leader>f :History<CR>
+nnoremap <leader>r :History:<CR>
+" edit vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <silent> <Leader>ee :FASD<CR>
+
+" upper case with C-u
+inoremap <c-u> <esc>viwUea
+nnoremap <c-u> viwU
+
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+abbrev myweb coopers.zone
+inoremap <c-f> <Left>
+inoremap <c-b> <Right>
+inoremap <expr> <c-p> pumvisible() ? '<c-e><Up>' : '<Up>'
+inoremap <expr> <c-n> pumvisible() ? '<c-e><Down>' :'<Down>' 
 
 
-" completion with tab key
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-
-
+" inoremap <Up> <nop>
+" inoremap <Down> <nop>
+" inoremap <Left> <nop>
+" inoremap <Right> <nop>

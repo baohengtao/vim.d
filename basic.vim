@@ -13,6 +13,7 @@ set path=$PWD/**
 " display
 set relativenumber
 set number
+set numberwidth=2
 set scrolloff=8 " 光标距离边缘的最小行数
 set wrap  " wrap lines
 set foldlevelstart=1
@@ -35,6 +36,7 @@ set smartcase
 filetype indent on
 set autoindent
 set smartindent
+colorscheme "dracula"
 
 " tab setting
 set tabstop=2  " 设置tab显示宽度

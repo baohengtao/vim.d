@@ -1,6 +1,7 @@
+
 function! s:fasd_update() abort
   if empty(&buftype) || &filetype ==# 'dirvish'
-    call job_start(['fasd', '-A', expand('%:p')])
+    call jobstart(['fasd', '-A', expand('%:p')])
   endif
 endfunction
 augroup fasd

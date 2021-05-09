@@ -1,3 +1,8 @@
 .DS*
 *#*
 bundle/
+pack/
+
+.netrwhist
+.netrwhist
+autoload/plug.vim
