@@ -1,35 +1,3 @@
-"" Sessions and Startify
-let g:session_directory=$XDG_DATA_HOME . '/nvim/session'
-let g:startify_session_directory = g:session_directory
-let g:startify_session_dir = g:session_directory
-let g:session_autosave = 'no'
-let g:session_autoload = 'no'
-let g:session_persist_font=0
-let g:session_persist_colors=0
-let g:session_persist_globals=0
-let g:session_default_name='cooper'
-
-let g:startify_lists = [
-      \ { 'type': 'sessions',  'header': ['  Sessions']       },
-      \ { 'type': 'files',     'header': ['  MRU']            },
-      \ { 'type': 'bookmarks', 'header': ['  Bookmarks']      },
-      \ { 'type': 'commands',  'header': ['  Commands']       },
-      \ ]
-                  
-
-
-
-                  
-                  
-            
-
-
-
-
-
-
-
-
 " Git Nerd
 let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
 let g:NERDTreeGitStatusIndicatorMapCustom = {

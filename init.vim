@@ -1,15 +1,9 @@
 set runtimepath+=$XDG_CONFIG_HOME/nvim
-let g:python3_host_prog = '/Users/htao/.local/workon/nvim/bin/python'
-runtime plugin.vim
+runtime env.vim
 runtime basic.vim
+runtime plugin.vim
 runtime custom.vim
 runtime keymap.vim
-runtime modeline.vim
-if has('nvim')
-  runtime fasd.nvim
-else
-  runtime fasd.vim
-endif
 
 echom "Hi~ (>^.^<)"
 

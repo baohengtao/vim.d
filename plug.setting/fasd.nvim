@@ -1,4 +1,3 @@
-
 function! s:fasd_update() abort
   if empty(&buftype) || &filetype ==# 'dirvish'
     call jobstart(['fasd', '-A', expand('%:p')])
