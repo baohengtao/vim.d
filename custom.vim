@@ -14,15 +14,11 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
       \ }
 
 
-" fzf
-let $FZF_DEFAULT_COMMAND="fd  --no-ignore-vcs "
-let $FZF_DEFAULT_OPTS='--height 80% --layout=reverse --border --multi --info=inline --exact'
-
-let g:fzf_layout = { 'window': { 'width': 0.75, 'height': 0.75 } }
-let g:fzf_buffers_jump = 1
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
-let g:fzf_tags_command = 'ctags -R'
-let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
 
-let g:ctrlp_extensions = ['sample']
+let g:vimwiki_list = [ {'path': '~/vimwiki/', 'syntax':'markdown', 'ext': '.md'} ] 
+
+" leaderf
+let g:Lf_PreviewInPopup = 1
+let g:Lf_WindowPosition = 'popup'
+

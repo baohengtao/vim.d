@@ -1,11 +1,21 @@
+"Color
+ set background=dark
+ highlight Pmenu ctermfg=250 ctermbg=000
+ highlight Normal ctermbg=none
+ colorscheme "dracula"
+
 "Preference
 set splitbelow
 set splitright
 set hidden 
 set mouse=a
-
+set laststatus=2
+if has("gui_macvim")
+  " font
+  set guifont=Monaco\ Nerd\ Font\ Mono
+  set guioptions=r
+endif
 "Sessions
-" set sessionoptions-=help
 set sessionoptions-=buffers
 set sessionoptions-=options
 
@@ -23,8 +33,6 @@ set scrolloff=8 " 光标距离边缘的最小行数
 set wrap  " wrap lines
 set foldlevelstart=1
 set nofoldenable
-set background=dark
-highlight Pmenu ctermfg=250 ctermbg=000
 
 " reload
 set autoread
@@ -41,7 +49,6 @@ set smartcase
 filetype indent on
 set autoindent
 set smartindent
-colorscheme "dracula"
 
 " tab setting
 set tabstop=2  " 设置tab显示宽度
