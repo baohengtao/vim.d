@@ -1,39 +1,28 @@
 call plug#begin('$XDG_DATA_HOME/vimplug')
 
-" search
-Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-
-" file
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-" session
-Plug 'xolox/vim-session' | Plug 'xolox/vim-misc'
-Plug 'mhinz/vim-startify'
-let g:session_directory=$XDG_DATA_HOME . '/nvim/session'
-let g:startify_session_directory = g:session_directory
-let g:session_autoload = 'no'
-
-
-" useful tool
-Plug 'tpope/vim-commentary' " add gc command for commentary
-Plug 'tpope/vim-surround'  " add cs commnad to change surround
-Plug 'lambdalisue/suda.vim' " edit with sudo
-
-" git
+" develop
 Plug 'tpope/vim-fugitive'
-set statusline+=%{FugitiveStatusline()}
+Plug 'jmcantrell/vim-virtualenv'
 
 " program language
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " lsp: autocomplete
 Plug 'lifepillar/vim-mucomplete'
+Plug 'sheerun/vim-polyglot' " syntax highlighting
 " Plug 'kassio/neoterm' " repl: interactive with ipython 
 " Plug 'codota/tabnine-vim'
-Plug 'sheerun/vim-polyglot' " syntax highlighting
-Plug 'jmcantrell/vim-virtualenv'
+let g:vim_indent_cont = shiftwidth() " see :h ft-vim-indent
+
+
+" file & search
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'xolox/vim-session' | Plug 'xolox/vim-misc'
+Plug 'mhinz/vim-startify', {'branch': 'center'}
+
 
 " writing
 Plug 'plasticboy/vim-markdown'
@@ -41,16 +30,20 @@ Plug 'iamcco/markdown-preview.nvim', { 'do':'cd app && yarn install' }
 Plug 'hotoo/pangu.vim' 
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
+" better experience
+Plug 'psliwka/vim-smoothie'
+
 " beauty
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='onedark'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_statusline_ontop=0
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
 
-" better experience
-Plug 'psliwka/vim-smoothie'
+
+" useful tool
+Plug 'tpope/vim-commentary' " add gc command for commentary
+Plug 'tpope/vim-surround'  " add cs commnad to change surround
+Plug 'lambdalisue/suda.vim' " edit with sudo
+
 
 call plug#end()

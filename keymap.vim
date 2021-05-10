@@ -8,12 +8,14 @@ inoremap <C-e> <End>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 inoremap <esc> <nop>
-inoremap <esc> 
 
+" indent
+vnoremap < <gv
+vnoremap > >gv
 
-" leader key
-let g:mapleader = "\<Space>"
-let g:maplocalleader = ','
+  " leader key
+  let g:mapleader = "\<Space>"
+  let g:maplocalleader = ','
 
 " shortcut
 nnoremap <leader>p :Commands<CR>
@@ -31,13 +33,11 @@ nnoremap <c-u> viwU
 
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 abbrev myweb coopers.zone
-inoremap <c-f> <Left>
-inoremap <c-b> <Right>
+inoremap <c-b> <Left>
+inoremap <c-f> <Right>
 inoremap <expr> <c-p> pumvisible() ? '<c-e><Up>' : '<Up>'
 inoremap <expr> <c-n> pumvisible() ? '<c-e><Down>' :'<Down>' 
-
-
-" inoremap <Up> <nop>
-" inoremap <Down> <nop>
-" inoremap <Left> <nop>
-" inoremap <Right> <nop>
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>

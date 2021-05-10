@@ -1,26 +1,49 @@
+"" Sessions and Startify
+let g:session_directory=$XDG_DATA_HOME . '/nvim/session'
+let g:startify_session_directory = g:session_directory
+let g:startify_session_dir = g:session_directory
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
+let g:session_persist_font=0
+let g:session_persist_colors=0
+let g:session_persist_globals=0
+let g:session_default_name='cooper'
+
+let g:startify_lists = [
+      \ { 'type': 'sessions',  'header': ['  Sessions']       },
+      \ { 'type': 'files',     'header': ['  MRU']            },
+      \ { 'type': 'bookmarks', 'header': ['  Bookmarks']      },
+      \ { 'type': 'commands',  'header': ['  Commands']       },
+      \ ]
+                  
 
 
-" NERD Tree
-let g:NERDTreeChDirMode = 2 " auto change dir 
-" " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-" autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-"     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+                  
+                  
+            
+
+
+
+
+
+
 
 
 " Git Nerd
 let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
 let g:NERDTreeGitStatusIndicatorMapCustom = {
-                \ 'Modified'  :'M',
-                \ 'Staged'    :'+',
-                \ 'Untracked' :'?',
-                \ 'Renamed'   :'»',
-                \ 'Unmerged'  :'═',
-                \ 'Deleted'   :'D',
-                \ 'Dirty'     :'✗',
-                \ 'Ignored'   :'☒',
-                \ 'Clean'     :'✔︎',
-                \ 'Unknown'   :'?',
-                \ }
+      \ 'Modified'  :'M',
+      \ 'Staged'    :'+',
+      \ 'Untracked' :'?',
+      \ 'Renamed'   :'»',
+      \ 'Unmerged'  :'═',
+      \ 'Deleted'   :'D',
+      \ 'Dirty'     :'✗',
+      \ 'Ignored'   :'☒',
+      \ 'Clean'     :'✔︎',
+      \ 'Unknown'   :'?',
+      \ }
 
 
 " fzf
@@ -35,11 +58,3 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
 
 let g:ctrlp_extensions = ['sample']
-
-
-let g:startify_lists = [
-      \ { 'type': 'files',     'header': ['   MRU']            },
-      \ { 'type': 'sessions',  'header': ['   Sessions']       },
-      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-      \ { 'type': 'commands',  'header': ['   Commands']       },
-      \ ]

@@ -4,6 +4,11 @@ set splitright
 set hidden 
 set mouse=a
 
+"Sessions
+" set sessionoptions-=help
+set sessionoptions-=buffers
+set sessionoptions-=options
+
 " file
 syntax on
 set nocompatible
@@ -48,3 +53,28 @@ autocmd FileType python set shiftwidth=2 tabstop=2 expandtab
 " cmd setting
 set wildmenu 
 set wildmode=full
+
+
+
+
+" Change cursor shape for iTerm2 on macOS {
+  " bar in Insert mode
+  " inside iTerm2
+  if $TERM_PROGRAM =~# 'iTerm'
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  endif
+  " inside tmux
+  if exists('$TMUX') && $TERM != 'xterm-kitty'
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  endif
+
+  " inside neovim
+  if has('nvim')
+    let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
+  endif
+" }
+
