@@ -6,6 +6,8 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " lsp: autocomplete
 Plug 'lifepillar/vim-mucomplete'
 Plug 'sheerun/vim-polyglot' " syntax highlighting
+Plug 'preservim/tagbar' " ctags
+Plug 'xolox/vim-easytags' " ctags
 let g:vim_indent_cont = shiftwidth() " see :h ft-vim-indent
 " }}}
 
@@ -18,11 +20,6 @@ runtime plug.setting/lightline.vim
 
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
-if has('nvim')
-  runtime plug.setting/fasd.nvim
-else
-  runtime plug.setting/fasd.vim
-endif
 " }}}
 
 

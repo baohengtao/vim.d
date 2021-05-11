@@ -14,3 +14,9 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 nnoremap <leader>f :History<CR>
 nnoremap <leader>r :History:<CR>
 nnoremap <leader>p :Commands<CR>
+
+if has('nvim')
+  runtime plug.setting/fasd.nvim
+else
+  runtime plug.setting/fasd.vim
+endif
