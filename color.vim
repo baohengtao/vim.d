@@ -1,7 +1,7 @@
 "Color
 set background=dark
 colorscheme dracula
-highlight Pmenu ctermfg=250 ctermbg=000
+highlight Pmenu ctermfg=250 ctermbg=none
 highlight Normal ctermbg=none
 
 

@@ -57,5 +57,5 @@ if has_key(plugs, 'lightline.vim')
 endif
 
 if has_key(plugs, "coc.nvim")
-  runtime plug.setting/coc.vim
+   runtime plug.setting/coc.vim
 endif
