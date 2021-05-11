@@ -4,6 +4,7 @@ call plug#begin('$XDG_DATA_HOME/vimplug')
 Plug 'tpope/vim-fugitive'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " lsp: autocomplete
+runtime plug.setting/coc.vim
 Plug 'sheerun/vim-polyglot' " syntax highlighting
 " }}}
 

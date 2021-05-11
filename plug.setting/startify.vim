@@ -39,23 +39,11 @@ endfunction
                 
             
 let g:startify_lists = [
-      \ { 'header': ['  Sessions'],   'type': 'sessions',       },
       \ { 'header': ['  NERDTree'],   'type': function('s:nerdtreeBookmarks')},
       \ { 'header': ['  MRU'],     'type': function('s:mru_dirs'),          },
       \ { 'header': ['  Commands'],   'type': 'commands',       },
+      \ { 'header': ['  Sessions'],   'type': 'sessions',       },
       \ ]
                   
       " \ { 'header': ['  Bookmarks'],  'type': 'bookmarks',      },
 
-if has('nvim')
-  autocmd TabNewEntered * Startify
-else
-  autocmd BufWinEnter *
-          \ if !exists('t:startify_new_tab')
-          \     && empty(expand('%'))
-          \     && empty(&l:buftype)
-          \     && &l:modifiable |
-          \   let t:startify_new_tab = 1 |
-          \   Startify |
-          \ endif
-endif

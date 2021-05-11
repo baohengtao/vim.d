@@ -1,15 +1,18 @@
 " Aias
 command T tabnew
 " Leader Key {{{
-let g:mapleader = "\<Space>"
-let g:maplocalleader = ','
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 " }}}
 " Function Map {{{
 nnoremap <leader>t :NERDTreeToggle %<CR>
-nnoremap <leader>s :Startify<CR>
-nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":LeaderfMru\<cr>"
+nnoremap <leader>s :tabnew \| Startify<CR>
+nnoremap <leader>p :LeaderfCommand<CR>
+nnoremap <leader><leader> :LeaderfSelf<CR>
+nnoremap <leader>fr :<C-U>LeaderfMru<CR>
+nnoremap <leader>ff :<C-U>LeaderfFile<CR>
+nnoremap <leader>fb :<C-U>LeaderfBuffer<CR>
+nnoremap <leader>fw :<C-U>LeaderfWindow<CR>
 " }}}
 
 
@@ -30,10 +33,10 @@ xnoremap > >gv
 
 
 " upper case with C-u
-inoremap <c-u> <esc>viwUea
+inoremap <c-u> <esc>ddO
+inoremap <D-u> <esc>ddO
 nnoremap <c-u> viwU
 abbrev myweb coopers.zone
-
 
 " arrow key {{{
 inoremap <c-b> <Left>
@@ -45,4 +48,6 @@ inoremap <expr> <c-n> pumvisible() ? '<c-e><Down>' :'<Down>'
 " inoremap <Left> <nop>
 " inoremap <Right> <nop>
 " }}}
+
+
 
