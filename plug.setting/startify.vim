@@ -3,7 +3,7 @@ let g:session_autosave = 'no'
 let g:session_autoload = 'no'
 let g:session_persist_font=0
 let g:session_persist_colors=0
-let g:session_persist_globals=0
+let g:session_persist_globals=['$PATH']
 let g:session_default_name='cooper'
 let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
 let g:startify_custom_indices = split('a s d f g h j k l')
@@ -46,4 +46,3 @@ let g:startify_lists = [
       \ ]
                   
       " \ { 'header': ['  Bookmarks'],  'type': 'bookmarks',      },
-

@@ -6,8 +6,6 @@ runtime custom.vim
 runtime color.vim
 runtime ftp.vim
 runtime keymap.vim
-
-
 echom "Hi~ (>^.^<)"
 
 
