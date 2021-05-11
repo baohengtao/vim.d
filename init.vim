@@ -3,10 +3,10 @@ runtime env.vim
 runtime basic.vim
 runtime plugin.vim
 runtime custom.vim
-runtime keymap.vim
 runtime color.vim
 runtime ftp.vim
-
+runtime coc.vim
+runtime keymap.vim
 echom "Hi~ (>^.^<)"
 
 

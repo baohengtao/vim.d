@@ -4,57 +4,33 @@ call plug#begin('$XDG_DATA_HOME/vimplug')
 Plug 'tpope/vim-fugitive'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " lsp: autocomplete
-Plug 'lifepillar/vim-mucomplete'
 Plug 'sheerun/vim-polyglot' " syntax highlighting
-Plug 'preservim/tagbar' " ctags
-Plug 'xolox/vim-easytags' " ctags
-let g:vim_indent_cont = shiftwidth() " see :h ft-vim-indent
 " }}}
 
-" lightline
-Plug 'itchyny/lightline.vim'
-Plug 'itchyny/vim-gitbranch'
-runtime plug.setting/lightline.vim
-
-" file & search --------------------------------{{{
-
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-
-" }}}
 
 
 " file exploer --------------------{{{
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-if has('nvim')
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/defx.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 " }}}
 
 
 " writing -------------------------{{{
 Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim', { 'do':'cd app && yarn install' }
 Plug 'hotoo/pangu.vim' 
-autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 " }}}
 
 
-" better experience
 Plug 'psliwka/vim-smoothie'
-" beauty
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'ryanoasis/vim-devicons'
+
 " useful tool
 Plug 'tpope/vim-commentary' " add gc command for commentary
 Plug 'tpope/vim-surround'  " add cs commnad to change surround
+Plug 'tpope/vim-unimpaired' " add [ command
 Plug 'lambdalisue/suda.vim' " edit with sudo
 
 " Startup ------------------------{{{
@@ -63,7 +39,12 @@ Plug 'mhinz/vim-startify', {'branch': 'center'}
 runtime plug.setting/startify.vim
 " }}}
 
-
+" beauty
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'ryanoasis/vim-devicons'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
+runtime plug.setting/lightline.vim
 
 
 call plug#end()

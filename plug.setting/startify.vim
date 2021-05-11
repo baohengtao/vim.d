@@ -6,6 +6,7 @@ let g:session_persist_colors=0
 let g:session_persist_globals=0
 let g:session_default_name='cooper'
 let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
+let g:startify_custom_indices = split('a s d f g h j k l')
 let g:startify_bookmarks = [{'v':$XDG_CONFIG_HOME . '/nvim'}]
 "" Bookmarks
 function! s:nerdtreeBookmarks()
@@ -30,16 +31,21 @@ function! s:nerdtreeBookmarks()
     return []
 endfunction
                   
-                  
+function! s:mru_dirs()
+  " get 5 most recently used working directories
+  let dirs = uniq(map(copy(v:oldfiles), 'fnamemodify(v:val, ":h")'))[:4]
+  return map(dirs, '{"line": fnamemodify(v:val, ":."), "path": v:val}')
+endfunction
+                
             
 let g:startify_lists = [
       \ { 'header': ['  Sessions'],   'type': 'sessions',       },
       \ { 'header': ['  NERDTree'],   'type': function('s:nerdtreeBookmarks')},
-      \ { 'header': ['  Bookmarks'],  'type': 'bookmarks',      },
-      \ { 'header': ['  MRU'],        'type': 'files',          },
+      \ { 'header': ['  MRU'],     'type': function('s:mru_dirs'),          },
       \ { 'header': ['  Commands'],   'type': 'commands',       },
       \ ]
                   
+      " \ { 'header': ['  Bookmarks'],  'type': 'bookmarks',      },
 
 if has('nvim')
   autocmd TabNewEntered * Startify
