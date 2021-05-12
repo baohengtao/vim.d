@@ -37,10 +37,10 @@ function! s:mru_dirs()
   return map(dirs, '{"line": fnamemodify(v:val, ":."), "path": v:val}')
 endfunction
                 
-            
+let g:startify_files_number = 5            
 let g:startify_lists = [
       \ { 'header': ['  NERDTree'],   'type': function('s:nerdtreeBookmarks')},
-      \ { 'header': ['  MRU'],     'type': function('s:mru_dirs'),          },
+      \ { 'header': ['  MRU'],     'type': 'files',          },
       \ { 'header': ['  Commands'],   'type': 'commands',       },
       \ { 'header': ['  Sessions'],   'type': 'sessions',       },
       \ ]

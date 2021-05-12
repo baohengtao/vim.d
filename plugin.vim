@@ -3,8 +3,9 @@ call plug#begin('$XDG_DATA_HOME/vimplug')
 " develop -----------------------------{{{
 Plug 'tpope/vim-fugitive'
 Plug 'jmcantrell/vim-virtualenv'
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " lsp: autocomplete
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " autocomplete with lsp
 Plug 'sheerun/vim-polyglot' " syntax highlighting
+Plug 'liuchengxu/vista.vim' " tag bar with lsp
 " }}}
 
 " file exploer --------------------{{{
@@ -18,6 +19,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'hotoo/pangu.vim' 
+Plug 'lervag/vimtex'
 " }}}
 
 
@@ -36,9 +38,9 @@ Plug 'mhinz/vim-startify', {'branch': 'center'}
 
 " beauty
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
+Plug 'ryanoasis/vim-devicons'
 
 
 call plug#end()

@@ -5,8 +5,12 @@ let g:toggle_term = "<leader>`"
 let s:term_buf_nr = -1
 function! ToggleTerminal()
     if s:term_buf_nr == -1
+      if has('nvim')
+        execute "split | bot term"
+      else
         execute "bot term"
-        let s:term_buf_nr = bufnr("$")
+      endif
+      let s:term_buf_nr = bufnr("$")
     else
         execute "bd! " .s:term_buf_nr
         let s:term_buf_nr = -1

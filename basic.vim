@@ -11,10 +11,12 @@ set splitbelow
 set splitright
 set hidden 
 set laststatus=2
-if has("gui_macvim")
-  set guifont=Monaco\ Nerd\ Font\ Mono
-  set guioptions=r
-endif
+
+" Gui
+set guifont=Monaco\ Nerd\ Font\ Mono
+set guioptions=r
+
+" Sessions
 set sessionoptions-=buffers
 set sessionoptions-=options
 " cmd setting
@@ -32,6 +34,7 @@ set wrap  " wrap lines
 "Primary
 syntax on
 set nocompatible
+set encoding=utf-8
 filetype plugin on
 set path=$PWD/**
 set autoread

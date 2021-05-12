@@ -8,4 +8,3 @@ runtime ftp.vim
 runtime keymap.vim
 echom "Hi~ (>^.^<)"
 
-

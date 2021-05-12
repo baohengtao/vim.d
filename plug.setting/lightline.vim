@@ -4,7 +4,9 @@ let g:lightline.colorscheme='dracula'
 let g:lightline.active={}
 let g:lightline.active.left=[
       \ ['mode', 'paste'],
-      \ ['gitbranch', 'pyenv', 'session', 'readonly', 'filename', 'modified']]
+      \ ['gitbranch', 'session',
+      \ 'pyenv', 'method', 
+      \ 'readonly', 'filename', 'modified']]
 let g:lightline.active.right=[
                   \ [ 'lineinfo' ],
                   \ [ 'percent' ],
@@ -20,9 +22,14 @@ let g:lightline.component_function={
                   \ 'gitbranch': 'LightlineFugitive',
                   \ 'pyenv':'PyEnv',
                   \ 'session':'MySession',
-                  \ 'readonly' : 'LightlineReadonly',}
+                  \ 'readonly' : 'LightlineReadonly',
+                  \ 'method' : 'NearestMethodOrFunction',
+                  \ 'filetype' : 'MyFiletype',
+                  \ 'fileformat' : 'MyFileformat',
+                  \ 'filename' : 'MyFilename'
+                  \ }
 
-let g:lightline.component={'lineinfo': ' %3l:%-2v'}
+let g:lightline.component={'lineinfo': ' %3l:%-2v', }
 let g:lightline.separator={ 'left': '', 'right': '' }
 let g:lightline.subseparator={ 'left': '', 'right': '' }
 
@@ -40,7 +47,7 @@ endfunction
 function! PyEnv() 
   if exists('*virtualenv#statusline') 
     let env=virtualenv#statusline()
-    return env !=# '' ? '🐍  '.env: '' 
+    return env !=# '' ? '🐍  '.env : '' 
   endif 
   return '' 
 endfunction 
@@ -49,11 +56,28 @@ endfunction
 function! MySession() 
   if exists('*xolox#session#find_current_session') 
     let session=xolox#session#find_current_session()
-    return session !=# '' ? ' '.session: '' 
+    return session !=# '' ? ' '.session : '' 
   endif 
   return '' 
 endfunction 
 
+function! NearestMethodOrFunction() abort
+  let method = get(b:, 'vista_nearest_method_or_function', '')
+  return method !=# '' ? ' '.method : ''
+endfunction
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
+function! MyFilename()
+  return winwidth(0) > 70 ? (WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:t')) : ''
+endfunction
 
 let g:lightline.mode_map={
       \ 'c' : 'CMD',
