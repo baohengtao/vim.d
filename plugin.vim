@@ -6,6 +6,7 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " autocomplete with lsp
 Plug 'sheerun/vim-polyglot' " syntax highlighting
 Plug 'liuchengxu/vista.vim' " tag bar with lsp
+Plug 'honza/vim-snippets' " add snippets 
 " }}}
 
 " file exploer --------------------{{{
