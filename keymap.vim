@@ -1,11 +1,36 @@
+" NERDTree
+nnoremap <expr> <leader>t len(bufname('%')) ? ":NERDTreeToggle %<CR>" : ":NERDTreeToggle<CR>"
+" Terminal
+let g:toggle_term = "<leader>`"
+let s:term_buf_nr = -1
+function! ToggleTerminal()
+    if s:term_buf_nr == -1
+        execute "bot term"
+        let s:term_buf_nr = bufnr("$")
+    else
+        execute "bd! " .s:term_buf_nr
+        let s:term_buf_nr = -1
+    endif
+endfunction
+execute "nnoremap ".g:toggle_term ." :call ToggleTerminal()<CR>"
+execute "tnoremap ".g:toggle_term ." <C-w>N:call ToggleTerminal()<CR>"
+
+
 " Aias
 command T tabnew
 " Leader Key {{{
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 " }}}
+
+function! s:ToggleTree()
+  if len(bufname('%')) == 0
+    exe "NERDTreeToggle"
+  else
+    exe "NERDTreeToggle %"
+  endif
+endfunction
 " Function Map {{{
-nnoremap <leader>t :NERDTreeToggle %<CR>
 nnoremap <leader>s :tabnew \| Startify<CR>
 nnoremap <leader>p :LeaderfCommand<CR>
 nnoremap <leader><leader> :LeaderfSelf<CR>

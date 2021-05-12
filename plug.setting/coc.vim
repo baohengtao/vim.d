@@ -3,5 +3,4 @@ let g:coc_global_extensions = [
   \ 'coc-pyright', 'coc-tabnine', 
   \ 'coc-vimlsp',
   \ 'coc-emoji', 'coc-snippets', 
-  \ 'coc-git',
   \ ]
