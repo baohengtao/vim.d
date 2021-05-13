@@ -20,22 +20,4 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 "}}}
 
 
-" TAB && SELECT ------------{{{
-" inoremap <silent><expr> <c-m> coc#refresh()
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-if exists('*complete_info')
-  inoremap <silent><expr> <cr> complete_info(['selected'])['selected'] != -1 ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
-" }}}
-
 

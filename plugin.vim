@@ -19,6 +19,8 @@ Plug 'honza/vim-snippets' " Colletcions of snippets
 " file exploer --------------------{{{
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
 " }}}
 
 " writing -------------------------{{{

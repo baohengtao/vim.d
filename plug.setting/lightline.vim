@@ -76,7 +76,12 @@ function! MyFileformat()
 endfunction
 
 function! MyFilename()
-  return winwidth(0) > 70 ? (WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:t')) : ''
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    let path =  path[len(root)+1:]
+  endif
+  return winwidth(0) > 70 ? (WebDevIconsGetFileTypeSymbol() . path) : ''
 endfunction
 
 let g:lightline.mode_map={
