@@ -41,6 +41,7 @@ let g:Lf_PreviewResult = {
 let g:tex_flavor = 'latex'
 " disable auto display error, :copen to manually open
 let g:vimtex_quickfix_mode = 0 
+let g:tex_conceal = 'abdmg' 
 
 
 " let g:vimtex_view_general_viewer

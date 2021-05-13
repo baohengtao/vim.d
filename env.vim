@@ -12,3 +12,8 @@ let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit=
   \ $XDG_CONFIG_HOME . '/nvim/coolsnips'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "coolsnips"]
 let g:UltiSnipsEditSplit="vertical"
+let g:repl_stayatrepl_when_open = 0
+let g:repl_program = {
+			\	'python': ['ipython'],
+			\	'default': ['zsh']
+			\	}

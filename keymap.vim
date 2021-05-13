@@ -1,5 +1,6 @@
 " Aias
 command T tabnew
+nnoremap <C-q> :qa!<cr>
 
 " escape with jk 
 inoremap jk <esc>  

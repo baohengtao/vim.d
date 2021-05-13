@@ -6,6 +6,7 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " autocomplete with lsp
 Plug 'sheerun/vim-polyglot' " syntax highlighting
 Plug 'liuchengxu/vista.vim' " tag bar with lsp
+Plug 'sillybun/vim-repl'
 " }}}
 
 " Snippets ------------------------{{{
@@ -20,7 +21,14 @@ Plug 'honza/vim-snippets' " Colletcions of snippets
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
+" if has('nvim')
+"   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/defx.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+
 " }}}
 
 " writing -------------------------{{{

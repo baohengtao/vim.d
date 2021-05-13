@@ -12,7 +12,7 @@ set splitbelow
 set splitright
 set hidden 
 set laststatus=2
-
+set conceallevel=2
 " Gui
 set guifont=Monaco\ Nerd\ Font\ Mono
 set guioptions=r

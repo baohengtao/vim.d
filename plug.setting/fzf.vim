@@ -15,8 +15,20 @@ nnoremap <leader>f :History<CR>
 nnoremap <leader>r :History:<CR>
 nnoremap <leader>p :Commands<CR>
 
-if has('nvim')
-  runtime plug.setting/fasd.nvim
-else
-  runtime plug.setting/fasd.vim
-endif
+
+function! s:fasd_update() abort
+  if empty(&buftype) || &filetype ==# 'dirvish'
+    if has('nvim')
+      call jobstart()
+    else
+      call job_start(['fasd', '-A', expand('%:p')])
+    endif
+  endif
+endfunction
+augroup fasd
+  autocmd!
+  autocmd BufWinEnter,BufFilePost * call s:fasd_update()
+augroup END
+command! FASD call fzf#run(fzf#wrap({'source': 'fasd -al', 'options': '--no-sort --tac --tiebreak=index'}))
+nnoremap <silent> <Leader>e :FASD<CR>
+
