@@ -1,4 +1,4 @@
-call plug#begin('$XDG_DATA_HOME/vimplug')
+call plug#begin('$XDG_CONFIG_HOME/nvim/vimplug')
 
 " develop -----------------------------{{{
 Plug 'tpope/vim-fugitive'
@@ -6,14 +6,19 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " autocomplete with lsp
 Plug 'sheerun/vim-polyglot' " syntax highlighting
 Plug 'liuchengxu/vista.vim' " tag bar with lsp
-Plug 'honza/vim-snippets' " add snippets 
+" }}}
+
+" Snippets ------------------------{{{
+Plug 'SirVer/ultisnips' " Track the engine 
+Plug 'honza/vim-snippets' " Colletcions of snippets
+
+
+
 " }}}
 
 " file exploer --------------------{{{
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " }}}
 
 " writing -------------------------{{{
@@ -39,8 +44,7 @@ Plug 'mhinz/vim-startify', {'branch': 'center'}
 
 " beauty
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'itchyny/lightline.vim'
-Plug 'itchyny/vim-gitbranch'
+Plug 'itchyny/lightline.vim'| Plug 'itchyny/vim-gitbranch'
 Plug 'ryanoasis/vim-devicons'
 
 

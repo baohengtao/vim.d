@@ -2,7 +2,6 @@
 *#*
 bundle/
 pack/
-
-.netrwhist
+vimplug/
 .netrwhist
 autoload/plug.vim

@@ -4,6 +4,7 @@
 set nobackup
 set nowritebackup
 set shortmess+=c
+set completeopt=noinsert,noselect,menuone
 
 set cmdheight=2
 set signcolumn=number
