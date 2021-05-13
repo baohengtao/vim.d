@@ -17,3 +17,5 @@ let g:repl_program = {
 			\	'python': ['ipython'],
 			\	'default': ['zsh']
 			\	}
+
+let g:coc_node_path = $HOME . '/.local/n/bin/node'
