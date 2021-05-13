@@ -8,3 +8,7 @@ let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
 let g:Lf_ShortcutF = ""
 let g:Lf_ShortcutB = ""
+let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit=
+  \ $XDG_CONFIG_HOME . '/nvim/coolsnips'
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "coolsnips"]
+let g:UltiSnipsEditSplit="vertical"

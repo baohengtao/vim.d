@@ -4,13 +4,10 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:coc_snippet_next = g:UltiSnipsJumpForwardTrigger
 let g:coc_snippet_prev = g:UltiSnipsJumpBackwardTrigger
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit=
-  \ $XDG_CONFIG_HOME . '/nvim/coolsnips'
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "coolsnips"]
+
+imap <C-l> <Plug>(coc-snippets-expand)
 
 " TAB && SELECT ------------{{{
-" inoremap <silent><expr> <c-m> coc#refresh()
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
