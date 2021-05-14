@@ -1,36 +1,21 @@
 call plug#begin('$XDG_CONFIG_HOME/nvim/vimplug')
 
 " develop -----------------------------{{{
-Plug 'tpope/vim-fugitive'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " autocomplete with lsp
 Plug 'sheerun/vim-polyglot' " syntax highlighting
 Plug 'liuchengxu/vista.vim' " tag bar with lsp
-" Plug 'sillybun/vim-repl'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets' 
 Plug 'urbainvaes/vim-ripple' | Plug 'machakann/vim-highlightedyank' " repl
 Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python' " select text obj
 " }}}
 
-" Snippets ------------------------{{{
-Plug 'SirVer/ultisnips' " Track the engine 
-Plug 'honza/vim-snippets' " Colletcions of snippets
-
-
-
-" }}}
-
 " file exploer --------------------{{{
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-" if has('nvim')
-"   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-"   Plug 'Shougo/defx.nvim'
-"   Plug 'roxma/nvim-yarp'
-"   Plug 'roxma/vim-hug-neovim-rpc'
-" endif
-
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+Plug 'tpope/vim-vinegar' " refine netrw exploer  
+Plug 'tpope/vim-fugitive'
+Plug 'lambdalisue/fern.vim'
 " }}}
 
 " writing -------------------------{{{
@@ -41,7 +26,6 @@ Plug 'lervag/vimtex'
 " }}}
 
 
-Plug 'psliwka/vim-smoothie'
 
 " useful tool
 Plug 'tpope/vim-commentary' " add gc command for commentary
@@ -58,6 +42,7 @@ Plug 'mhinz/vim-startify', {'branch': 'center'}
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'itchyny/lightline.vim'| Plug 'itchyny/vim-gitbranch'
 Plug 'ryanoasis/vim-devicons'
+Plug 'psliwka/vim-smoothie'
 
 
 call plug#end()
