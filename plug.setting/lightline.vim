@@ -7,10 +7,17 @@ let g:lightline.active.left=[
       \ ['gitbranch', 'session',
       \ 'pyenv', 'method', 
       \ 'readonly', 'filename', 'modified']]
+" let g:lightline.active.right=[
+"                   \ [ 'lineinfo' ],
+"                   \ [ 'percent' ],
+"                   \ [ 'fileformat', 'fileencoding', 'filetype' ]]
+
 let g:lightline.active.right=[
                   \ [ 'lineinfo' ],
                   \ [ 'percent' ],
-                  \ [ 'fileformat', 'fileencoding', 'filetype' ]]
+                  \ [ 'filetype' ]]
+
+
 
 let g:lightline.inactive = {}
 let g:lightline.inactive.left = [ [ 'filename' ] ]
@@ -24,7 +31,6 @@ let g:lightline.component_function={
                   \ 'session':'MySession',
                   \ 'readonly' : 'LightlineReadonly',
                   \ 'method' : 'NearestMethodOrFunction',
-                  \ 'filetype' : 'MyFiletype',
                   \ 'fileformat' : 'MyFileformat',
                   \ 'filename' : 'MyFilename'
                   \ }

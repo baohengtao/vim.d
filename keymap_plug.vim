@@ -1,12 +1,16 @@
 
 " Function Map {{{
 nnoremap <leader>s :tabnew \| Startify<CR>
-nnoremap <leader>p :LeaderfCommand<CR>
-nnoremap <leader><leader> :LeaderfSelf<CR>
-nnoremap <leader>fr :<C-U>LeaderfMru<CR>
-nnoremap <leader>ff :<C-U>LeaderfFile<CR>
-nnoremap <leader>fb :<C-U>LeaderfBuffer<CR>
-nnoremap <leader>fw :<C-U>LeaderfWindow<CR>
+nnoremap <leader>p :<C-U>Clap command<CR>
+nnoremap <leader><leader> :Clap<CR>
+nnoremap <leader>fr :<C-U>Clap history<CR>
+nnoremap <leader>ff :<C-U>Clap files<CR>
+nnoremap <leader>fs :<C-U>Clap grep2<CR>
+nnoremap <leader>gf :<C-U>Clap gfiles<CR>
+nnoremap <leader>gd :<C-U>Clap git_diff_files<CR>
+nnoremap <leader>gc :<C-U>Clap commits<CR>
+nnoremap <leader>fb :<C-U>Clap buffers<CR>
+nnoremap <leader>fw :<C-U>Clap windows<CR>
 " nnoremap <expr> <leader>tc len(bufname('%')) ? ":NERDTreeToggle %<CR>" : ":NERDTreeToggle<CR>"
 nnoremap <leader>tt :<C-U>NERDTreeToggle<CR>
 nnoremap <leader>tc :<C-U>NERDTreeToggle %<CR>
@@ -24,4 +28,5 @@ nmap <silent> <leader>rn <Plug>(coc-rename)
 
 let g:sendtorepl_invoke_key = "<leader>w"
 nnoremap <leader>r :REPLToggle<Cr>
+
 

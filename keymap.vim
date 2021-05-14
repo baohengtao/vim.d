@@ -1,11 +1,12 @@
 " Aias
 command T tabnew
 nnoremap <C-q> :qa!<cr>
+autocmd FileType help noremap <buffer> q :q<cr>
 
 " escape with jk 
 inoremap jk <esc>  
 cnoremap jk <C-C> 
-tnoremap jk <C-\><C-n> 
+" tnoremap jk <C-\><C-n> 
 " add C-a C-e
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
@@ -26,7 +27,7 @@ abbrev myweb coopers.zone
 " arrow key {{{
 inoremap <c-b> <Left>
 inoremap <c-f> <Right>
-inoremap <expr> <c-p> pumvisible() ? '<c-e><Up>' : '<Up>'
+inoremap <expr> <c-p> pumvisible() ? "\<c-e><Up>" : '<Up>'
 inoremap <expr> <c-n> pumvisible() ? '<c-e><Down>' :'<Down>' 
 " }}}
 
