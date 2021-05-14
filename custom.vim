@@ -1,3 +1,15 @@
+
+let g:neoterm_callbacks = {}
+function! g:neoterm_callbacks.before_new()
+  if winwidth('.') > 100
+    let g:neoterm_default_mod = 'botright vertical'
+  else
+    let g:neoterm_default_mod = 'botright'
+  end
+endfunction
+
+let g:neoterm_repl_python = ['pyenv shell', 'clear', 'ipython']
+
 " Git Nerd
 let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
 let g:NERDTreeGitStatusIndicatorMapCustom = {

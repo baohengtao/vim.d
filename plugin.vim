@@ -6,7 +6,9 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " autocomplete with lsp
 Plug 'sheerun/vim-polyglot' " syntax highlighting
 Plug 'liuchengxu/vista.vim' " tag bar with lsp
-Plug 'sillybun/vim-repl'
+" Plug 'sillybun/vim-repl'
+Plug 'urbainvaes/vim-ripple' | Plug 'machakann/vim-highlightedyank' " repl
+Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python' " select text obj
 " }}}
 
 " Snippets ------------------------{{{
