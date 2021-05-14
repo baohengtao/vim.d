@@ -7,7 +7,9 @@ nnoremap <leader>fr :<C-U>LeaderfMru<CR>
 nnoremap <leader>ff :<C-U>LeaderfFile<CR>
 nnoremap <leader>fb :<C-U>LeaderfBuffer<CR>
 nnoremap <leader>fw :<C-U>LeaderfWindow<CR>
-nnoremap <expr> <leader>t len(bufname('%')) ? ":NERDTreeToggle %<CR>" : ":NERDTreeToggle<CR>"
+" nnoremap <expr> <leader>tc len(bufname('%')) ? ":NERDTreeToggle %<CR>" : ":NERDTreeToggle<CR>"
+nnoremap <leader>tt :<C-U>NERDTreeToggle<CR>
+nnoremap <leader>tc :<C-U>NERDTreeToggle %<CR>
 " }}}
 
 " Programming {{{
