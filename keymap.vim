@@ -22,7 +22,6 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
-inoremap <esc> <nop>
 
 " indent
 xnoremap < <gv

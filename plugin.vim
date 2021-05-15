@@ -63,6 +63,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'hotoo/pangu.vim' 
 Plug 'lervag/vimtex'
+Plug 'lyokha/vim-xkbswitch'
+  \ | let g:XkbSwitchEnabled =1  " Enable Chinese Support
 " }}}
 
 

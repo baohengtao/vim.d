@@ -12,7 +12,7 @@ let g:tex_conceal = 'abdmg'
 function! s:fasd_update() abort
   if empty(&buftype) || &filetype ==# 'dirvish'
     if has('nvim')
-      call jobstart()
+      call jobstart(['fasd', '-A', expand('%:p')])
     else
       call job_start(['fasd', '-A', expand('%:p')])
     endif
