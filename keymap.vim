@@ -1,3 +1,7 @@
+" move line up/down
+nnoremap <Leader>k :m .-2<CR>==
+nnoremap <Leader>j :m .+1<CR>==
+
 " Aias
 command T tabnew
 
@@ -63,3 +67,20 @@ execute "nnoremap ".g:toggle_term ." :call ToggleTerminal()<CR>"
 execute "tnoremap ".g:toggle_term ." <C-w>N:call ToggleTerminal()<CR>"
 
 
+" Reveal In Finder
+function! s:RevealInFinder()
+  if filereadable(expand("%"))
+    let l:command = "open -R " . shellescape("%")
+  elseif getftype(expand("%:p:h")) == "dir"
+    let l:command = "open " . shellescape("%") . ":p:h"
+  else
+    let l:command = "open ."
+  endif
+
+  execute ":silent! !" . l:command
+
+  " For terminal Vim not to look messed up.
+  redraw!
+endfunction
+
+command! Reveal call <SID>RevealInFinder()

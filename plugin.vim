@@ -31,11 +31,21 @@ Plug 'lambdalisue/fern.vim' | Plug 'lambdalisue/fern-git-status.vim'
   \ | Plug 'lambdalisue/fern-hijack.vim'
   \ | Plug 'lambdalisue/fern-bookmark.vim'
   \ | Plug 'LumaKernel/fern-mapping-fzf.vim'
-  \ | Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  \ | Plug 'junegunn/fzf.vim'
   \ | let g:fern#renderer = "nerdfont"
   \ | let g:fern#disable_default_mappings = 1
   \ | let g:fern#mapping#fzf#disable_default_mappings = 1
+
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  \ | Plug 'junegunn/fzf.vim'
+let $FZF_DEFAULT_COMMAND="fd  --no-ignore-vcs "
+let $FZF_DEFAULT_OPTS='--height 80% --layout=reverse --border --multi --info=inline --exact'
+let g:fzf_layout = { 'window': { 'width': 0.75, 'height': 0.75 } }
+let g:fzf_buffers_jump = 1
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+let g:fzf_tags_command = 'ctags -R'
+let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+
 
 augroup my-glyph-palette
   autocmd! *
@@ -49,7 +59,7 @@ Plug 't9md/vim-choosewin'  | let g:choosewin_overlay_enable = 0
 " }}}
 
 " writing -------------------------{{{
-" Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'hotoo/pangu.vim' 
 Plug 'lervag/vimtex'

@@ -11,8 +11,8 @@ nnoremap <leader>gd :<C-U>Clap git_diff_files<CR>
 nnoremap <leader>gc :<C-U>Clap commits<CR>
 nnoremap <leader>fb :<C-U>Clap buffers<CR>
 nnoremap <leader>fw :<C-U>Clap windows<CR>
-nnoremap <leader>tc :<C-U>Fern %:h -drawer -toggle -keep<CR>
-nnoremap <leader>tt :<C-U>Fern . -reveal=% -drawer -toggle -keep<CR>
+nnoremap <leader>tc :<C-U>Fern %:h -drawer -toggle -keep -width=30<CR>
+nnoremap <leader>tt :<C-U>Fern . -reveal=% -drawer -toggle -width=30<CR>
 nmap - <Plug>(choosewin)
 " }}}
 
