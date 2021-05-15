@@ -139,34 +139,32 @@ let g:XkbSwitchEnabled =1
 "                                    tool                                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+ " add gc command for commentary
+Plug 'tpope/vim-commentary'
+ " add cs commnad to change surround
+Plug 'tpope/vim-surround' 
+" add [ command
+Plug 'tpope/vim-unimpaired' 
+" edit with sudo
+Plug 'lambdalisue/suda.vim' 
 
-Plug 'tpope/vim-commentary' " add gc command for commentary
-Plug 'tpope/vim-surround'  " add cs commnad to change surround
-Plug 'tpope/vim-unimpaired' " add [ command
-Plug 'lambdalisue/suda.vim' " edit with sudo
 Plug 'mbbill/undotree'
+
 Plug 't9md/vim-choosewin'  | let g:choosewin_overlay_enable = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   startup                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-" Startup ------------------------{{{
 Plug 'xolox/vim-session' | Plug 'xolox/vim-misc'
 Plug 'mhinz/vim-startify', {'branch': 'center'}
 let g:session_directory=$XDG_DATA_HOME . '/nvim/session'
 let g:startify_session_directory = g:session_directory
 let g:startify_session_dir = g:session_directory
 let g:BookmarksFile = expand('$XDG_CONFIG_HOME') . '/nvim/bookmarks' 
-" }}}
-
-" beauty
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'itchyny/lightline.vim'| Plug 'itchyny/vim-gitbranch'
 Plug 'psliwka/vim-smoothie'
-
-
 
 call plug#end()
 
