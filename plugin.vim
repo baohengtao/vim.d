@@ -20,17 +20,34 @@ Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python' " select text obj
 " }}}
 
 " file exploer --------------------{{{
+Plug 'ryanoasis/vim-devicons'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Plug 'tpope/vim-fugitive'
 Plug 'lambdalisue/fern.vim' | Plug 'lambdalisue/fern-git-status.vim' 
-  \ | Plug 'lambdalisue/fern-renderer-nerdfont.vim' | Plug 'lambdalisue/glyph-palette.vim'
+  \ | Plug 'lambdalisue/nerdfont.vim'
+  \ | Plug 'lambdalisue/fern-renderer-nerdfont.vim' 
+  \ | Plug 'lambdalisue/glyph-palette.vim'
+  \ | Plug 'lambdalisue/fern-hijack.vim'
+  \ | Plug 'lambdalisue/fern-bookmark.vim'
   \ | Plug 'LumaKernel/fern-mapping-fzf.vim'
   \ | Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   \ | Plug 'junegunn/fzf.vim'
+  \ | let g:fern#renderer = "nerdfont"
+  \ | let g:fern#disable_default_mappings = 1
+
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
+
+
+Plug 't9md/vim-choosewin'  | let g:choosewin_overlay_enable = 0
+
 " }}}
 
 " writing -------------------------{{{
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'hotoo/pangu.vim' 
 Plug 'lervag/vimtex'
@@ -43,6 +60,7 @@ Plug 'tpope/vim-commentary' " add gc command for commentary
 Plug 'tpope/vim-surround'  " add cs commnad to change surround
 Plug 'tpope/vim-unimpaired' " add [ command
 Plug 'lambdalisue/suda.vim' " edit with sudo
+Plug 'mbbill/undotree'
 
 " Startup ------------------------{{{
 Plug 'xolox/vim-session' | Plug 'xolox/vim-misc'
@@ -56,12 +74,12 @@ let g:NERDTreeBookmarksFile = expand('$XDG_DATA_HOME') . '/nvim/bookmarks'
 " beauty
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'itchyny/lightline.vim'| Plug 'itchyny/vim-gitbranch'
-Plug 'ryanoasis/vim-devicons'
 Plug 'psliwka/vim-smoothie'
 
 
 " depreciated
-Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'preservim/nerdtree'   | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
+  \ | let g:NERDTreeHijackNetrw=0
 
 call plug#end()
 

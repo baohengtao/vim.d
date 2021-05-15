@@ -1,5 +1,11 @@
 " Aias
 command T tabnew
+
+" augroup vimrc_help
+"   autocmd!
+"   autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
+" augroup END
+
 nnoremap <C-q> :qa!<cr>
 autocmd FileType help noremap <buffer> q :q<cr>
 

@@ -1,30 +1,25 @@
 
-let g:fern#renderer = "nerdfont"
 
 
 function! s:init_fern() abort
-  " Define NERDTree like mappings
-  nmap <buffer> <2-LeftMouse> <Plug>(fern-action-open:edit)
-  nmap <buffer> o <Plug>(fern-action-open:edit)
-  nmap <buffer> go <Plug>(fern-action-open:edit)<C-w>p
-  nmap <buffer> t <Plug>(fern-action-open:tabedit)
-  nmap <buffer> T <Plug>(fern-action-open:tabedit)gT
-  nmap <buffer> i <Plug>(fern-action-open:split)
-  nmap <buffer> gi <Plug>(fern-action-open:split)<C-w>p
-  nmap <buffer> s <Plug>(fern-action-open:vsplit)
-  nmap <buffer> gs <Plug>(fern-action-open:vsplit)<C-w>p
-  nmap <buffer> ma <Plug>(fern-action-new-path)
-  nmap <buffer> P gg
-
-  nmap <buffer> C <Plug>(fern-action-enter)
-  nmap <buffer> u <Plug>(fern-action-leave)
+  nmap <buffer><expr>
+    \ <Plug>(fern-my-open-expand-collapse)
+    \ fern#smart#leaf(
+    \ "\<Plug>(fern-action-open)",
+    \ "\<Plug>(fern-action-expand)",
+    \ "\<Plug>(fern-action-collapse)",
+    \)
+  nmap <buffer> <2-LeftMouse> <Plug>(fern-action-enter)
+  nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
+  nmap <buffer> n <Plug>(fern-action-new-path)
+  nmap <buffer> d <Plug>(fern-action-trash)
+  nmap <buffer> m <Plug>(fern-action-move)
+  nmap <buffer> M <Plug>(fern-action-rename)
+  nmap <buffer> h <Plug>(fern-action-hidden-toggle)
   nmap <buffer> r <Plug>(fern-action-reload)
-  nmap <buffer> R gg<Plug>(fern-action-reload)<C-o>
-  nmap <buffer> cd <Plug>(fern-action-cd)
-  nmap <buffer> CD gg<Plug>(fern-action-cd)<C-o>
-
-  nmap <buffer> I <Plug>(fern-action-hide-toggle)
-
+  nmap <buffer> s <Plug>(fern-action-mark-toggle)
+  nmap <buffer> x <Plug>(fern-action-open:split)
+  nmap <buffer> v <Plug>(fern-action-open:vsplit)
   nmap <buffer> q :<C-u>quit<CR>
 endfunction
 
@@ -32,4 +27,8 @@ augroup fern-custom
   autocmd! *
   autocmd FileType fern call s:init_fern()
 augroup END
+
+
+
+
 

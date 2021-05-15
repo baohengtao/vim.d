@@ -13,6 +13,7 @@ nnoremap <leader>fb :<C-U>Clap buffers<CR>
 nnoremap <leader>fw :<C-U>Clap windows<CR>
 nnoremap <leader>tc :<C-U>Fern %:h -drawer -toggle -keep<CR>
 nnoremap <leader>tt :<C-U>Fern . -reveal=% -drawer -toggle -keep<CR>
+nmap - <Plug>(choosewin)
 " }}}
 
 " Programming {{{
