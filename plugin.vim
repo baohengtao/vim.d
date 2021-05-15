@@ -10,7 +10,6 @@ let g:virtualenv_auto_activate=1
 Plug 'neoclide/coc.nvim', {'branch': 'release'} 
 let g:coc_node_path = $HOME . '/.local/n/bin/node'
 
-Plug 'sheerun/vim-polyglot' " syntax highlighting
 Plug 'liuchengxu/vista.vim' " tag bar with lsp
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -21,7 +20,7 @@ let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit=
 
 Plug 'urbainvaes/vim-ripple' | Plug 'machakann/vim-highlightedyank' " repl
 Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python' " select text obj
-
+Plug 'sheerun/vim-polyglot' " syntax highlighting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                     File exploer                                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -100,9 +99,6 @@ Plug 'itchyny/lightline.vim'| Plug 'itchyny/vim-gitbranch'
 Plug 'psliwka/vim-smoothie'
 
 
-" depreciated
-Plug 'preservim/nerdtree'   | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
-  \ | let g:NERDTreeHijackNetrw=0
 
 call plug#end()
 
@@ -119,13 +115,6 @@ if has_key(plugs, 'lightline.vim')
   runtime plug.setting/lightline.vim
 endif
 
-if has_key(plugs, "coc.nvim")
-   runtime plug.setting/coc.vim
-endif
-
-
-" depreciated
-Plug 'tpope/vim-vinegar' " refine netrw exploer  
 
 
 

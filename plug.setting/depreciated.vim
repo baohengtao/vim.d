@@ -1,3 +1,7 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                  NerdTree                                  "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Git Nerd
 let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
 let g:NERDTreeGitStatusIndicatorMapCustom = {
@@ -20,4 +24,5 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 " nnoremap <leader>tc :<C-U>NERDTreeToggle %<CR>
 "
 "
-
+Plug 'preservim/nerdtree'   | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
+  \ | let g:NERDTreeHijackNetrw=0
