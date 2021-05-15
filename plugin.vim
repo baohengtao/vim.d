@@ -22,24 +22,12 @@ Plug 'urbainvaes/vim-ripple' | Plug 'machakann/vim-highlightedyank' " repl
 Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python' " select text obj
 Plug 'sheerun/vim-polyglot' " syntax highlighting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                     File exploer                                  "
+"                                     search                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Plug 'ryanoasis/vim-devicons'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
   \ | let g:clap_layout = { 'relative': 'editor' }
 Plug 'tpope/vim-fugitive'
-Plug 'lambdalisue/fern.vim' | Plug 'lambdalisue/fern-git-status.vim' 
-  \ | Plug 'lambdalisue/nerdfont.vim'
-  \ | Plug 'lambdalisue/fern-renderer-nerdfont.vim' 
-  \ | Plug 'lambdalisue/glyph-palette.vim'
-  \ | Plug 'lambdalisue/fern-hijack.vim'
-  \ | Plug 'lambdalisue/fern-bookmark.vim'
-  \ | Plug 'LumaKernel/fern-mapping-fzf.vim'
-  \ | let g:fern#renderer = "nerdfont"
-  \ | let g:fern#disable_default_mappings = 1
-  \ | let g:fern#mapping#fzf#disable_default_mappings = 1
-
 
 Plug 'junegunn/fzf.vim' | Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 let $FZF_DEFAULT_COMMAND="fd  --no-ignore-vcs "
@@ -51,18 +39,46 @@ let g:fzf_tags_command = 'ctags -R'
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
 
+
+
+function! s:fasd_update() abort
+  if empty(&buftype) || &filetype ==# 'dirvish'
+    if has('nvim')
+      call jobstart(['fasd', '-A', expand('%:p')])
+    else
+      call job_start(['fasd', '-A', expand('%:p')])
+    endif
+  endif
+endfunction
+augroup fasd
+  autocmd!
+  autocmd BufWinEnter,BufFilePost * call s:fasd_update()
+augroup END
+command! FASD call fzf#run(fzf#wrap({'source': 'fasd -al', 'options': '--no-sort --tac --tiebreak=index'}))
+nnoremap <silent> <Leader>e :FASD<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                    Fern                                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'lambdalisue/fern.vim' | Plug 'lambdalisue/fern-git-status.vim' 
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim' 
+Plug 'lambdalisue/glyph-palette.vim'
+Plug 'lambdalisue/fern-hijack.vim'
+Plug 'lambdalisue/fern-bookmark.vim'
+Plug 'LumaKernel/fern-mapping-fzf.vim'
+let g:fern#renderer = "nerdfont"
+let g:fern#disable_default_mappings = 1
+let g:fern#mapping#fzf#disable_default_mappings = 1
+
 augroup my-glyph-palette
   autocmd! *
   autocmd FileType fern call glyph_palette#apply()
   autocmd FileType nerdtree,startify call glyph_palette#apply()
 augroup END
 
-
-Plug 't9md/vim-choosewin'  | let g:choosewin_overlay_enable = 0
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                    Fern                                    "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:init_fern() abort
   nmap <buffer><expr>
     \ <Plug>(fern-my-open-expand-collapse)
@@ -119,14 +135,22 @@ Plug 'lervag/vimtex'
 Plug 'lyokha/vim-xkbswitch'
 let g:XkbSwitchEnabled =1  
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                    tool                                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-" useful tool
 Plug 'tpope/vim-commentary' " add gc command for commentary
 Plug 'tpope/vim-surround'  " add cs commnad to change surround
 Plug 'tpope/vim-unimpaired' " add [ command
 Plug 'lambdalisue/suda.vim' " edit with sudo
 Plug 'mbbill/undotree'
+Plug 't9md/vim-choosewin'  | let g:choosewin_overlay_enable = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                   startup                                    "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " Startup ------------------------{{{
 Plug 'xolox/vim-session' | Plug 'xolox/vim-misc'
