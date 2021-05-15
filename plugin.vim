@@ -62,6 +62,7 @@ Plug 't9md/vim-choosewin'  | let g:choosewin_overlay_enable = 0
 Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'hotoo/pangu.vim' 
+  \ | autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 Plug 'lervag/vimtex'
 Plug 'lyokha/vim-xkbswitch'
   \ | let g:XkbSwitchEnabled =1  " Enable Chinese Support

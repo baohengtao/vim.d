@@ -1,3 +1,7 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                             Basic Key Binding                              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " move line up/down
 nnoremap <Leader>k :m .-2<CR>==
 nnoremap <Leader>j :m .+1<CR>==
@@ -5,10 +9,6 @@ nnoremap <Leader>j :m .+1<CR>==
 " Aias
 command T tabnew
 
-" augroup vimrc_help
-"   autocmd!
-"   autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
-" augroup END
 
 nnoremap <C-q> :qa!<cr>
 autocmd FileType help noremap <buffer> q :q<cr>
@@ -48,6 +48,40 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                   Completion                                 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+let g:UltiSnipsExpandTrigger="<c-u>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:coc_snippet_next = g:UltiSnipsJumpForwardTrigger
+let g:coc_snippet_prev = g:UltiSnipsJumpBackwardTrigger
+
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" TAB && SELECT ------------{{{
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+if exists('*complete_info')
+  inoremap <silent><expr> <cr> complete_info(['selected'])['selected'] != -1 ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+" }}}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                             Function                                  "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terminal
 let g:toggle_term = "<leader>`"
 let s:term_buf_nr = -1
@@ -85,3 +119,5 @@ function! s:RevealInFinder()
 endfunction
 
 command! Reveal call <SID>RevealInFinder()
+
+
