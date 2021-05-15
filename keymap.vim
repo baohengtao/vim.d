@@ -14,8 +14,10 @@ nnoremap <C-q> :qa!<cr>
 autocmd FileType help noremap <buffer> q :q<cr>
 
 " escape with jk 
-inoremap jk <esc>  
+"inoremap jk <esc>  
+inoremap jj <esc>
 cnoremap jk <C-C> 
+cnoremap jj <C-C>
 " tnoremap jk <C-\><C-n> 
 " add C-a C-e
 inoremap <C-a> <Home>
