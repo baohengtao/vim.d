@@ -1,8 +1,4 @@
 
-nmap <buffer>
-  \ <Plug>(fern-action-expand)
-  \ <Plug>(fern-action-expand:stay)
-
 
 function! s:init_fern() abort
   nmap <buffer><expr>

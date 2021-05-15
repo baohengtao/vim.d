@@ -15,12 +15,11 @@ highlight Normal ctermbg=none
 
 
 
-" Vimscript file settings -----------------------{{{
 augroup filetype_vim 
   autocmd!
   autocmd FileType vim setlocal foldmethod=marker
 augroup END
-" }}}
+
 
 " tab setting
 set tabstop=2  " 设置tab显示宽度
@@ -33,11 +32,8 @@ autocmd FileType python set shiftwidth=2 tabstop=2 expandtab
 filetype indent on
 set autoindent
 set smartindent
-
-
 set foldlevelstart=1
 set nofoldenable
-
 
 let g:vim_indent_cont = shiftwidth() " see :h ft-vim-indent
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()

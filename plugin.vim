@@ -4,33 +4,28 @@ call plug#begin('$XDG_CONFIG_HOME/nvim/vimplug')
 "                                   Develop                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-" develop -----------------------------{{{
 Plug 'jmcantrell/vim-virtualenv'
-  \ | let g:virtualenv_auto_activate=1
+let g:virtualenv_auto_activate=1
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'} 
-  \ | let g:coc_node_path = $HOME . '/.local/n/bin/node'
+let g:coc_node_path = $HOME . '/.local/n/bin/node'
+
 Plug 'sheerun/vim-polyglot' " syntax highlighting
 Plug 'liuchengxu/vista.vim' " tag bar with lsp
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-  \ | let g:UltiSnipsSnippetDirectories=["UltiSnips", "coolsnips"] 
-  \ | let g:UltiSnipsEditSplit="vertical"
-  \ | let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit=
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "coolsnips"] 
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit=
   \ $XDG_CONFIG_HOME . '/nvim/coolsnips'
 
 Plug 'urbainvaes/vim-ripple' | Plug 'machakann/vim-highlightedyank' " repl
 Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python' " select text obj
-" }}}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                     File exploer                                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-
-" file exploer --------------------{{{
 Plug 'ryanoasis/vim-devicons'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
   \ | let g:clap_layout = { 'relative': 'editor' }
@@ -47,8 +42,7 @@ Plug 'lambdalisue/fern.vim' | Plug 'lambdalisue/fern-git-status.vim'
   \ | let g:fern#mapping#fzf#disable_default_mappings = 1
 
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  \ | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim' | Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 let $FZF_DEFAULT_COMMAND="fd  --no-ignore-vcs "
 let $FZF_DEFAULT_OPTS='--height 80% --layout=reverse --border --multi --info=inline --exact'
 let g:fzf_layout = { 'window': { 'width': 0.75, 'height': 0.75 } }
@@ -67,22 +61,20 @@ augroup END
 
 Plug 't9md/vim-choosewin'  | let g:choosewin_overlay_enable = 0
 
-" }}}
-"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   writing                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-" writing -------------------------{{{
 Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'hotoo/pangu.vim' 
-  \ | autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
+autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 Plug 'lervag/vimtex'
+
+" Enable Chinese Support
 Plug 'lyokha/vim-xkbswitch'
-  \ | let g:XkbSwitchEnabled =1  " Enable Chinese Support
-" }}}
+let g:XkbSwitchEnabled =1  
 
 
 

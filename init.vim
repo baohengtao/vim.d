@@ -7,7 +7,6 @@ runtime basic.vim
 runtime plugin.vim
 runtime custom.vim
 runtime keymap.vim
-runtime keymap_plug.vim
 runtime fern.vim
 echom "Hi~ (>^.^<)"
 
