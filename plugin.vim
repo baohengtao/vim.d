@@ -1,5 +1,10 @@
 call plug#begin('$XDG_CONFIG_HOME/nvim/vimplug')
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                   Develop                                    "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 " develop -----------------------------{{{
 Plug 'jmcantrell/vim-virtualenv'
   \ | let g:virtualenv_auto_activate=1
@@ -18,6 +23,12 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'urbainvaes/vim-ripple' | Plug 'machakann/vim-highlightedyank' " repl
 Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python' " select text obj
 " }}}
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                     File exploer                                  "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 
 " file exploer --------------------{{{
 Plug 'ryanoasis/vim-devicons'
@@ -57,6 +68,11 @@ augroup END
 Plug 't9md/vim-choosewin'  | let g:choosewin_overlay_enable = 0
 
 " }}}
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                   writing                                    "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " writing -------------------------{{{
 Plug 'vimwiki/vimwiki'
@@ -118,3 +134,6 @@ endif
 
 " depreciated
 Plug 'tpope/vim-vinegar' " refine netrw exploer  
+
+
+
