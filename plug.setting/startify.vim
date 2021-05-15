@@ -11,7 +11,7 @@ let g:startify_bookmarks = [{'v':$XDG_CONFIG_HOME . '/nvim'}]
 "" Bookmarks
 function! s:nerdtreeBookmarks()
     " List NERDTree bookmarks.
-    let bookmarksFile = g:NERDTreeBookmarksFile
+    let bookmarksFile = g:BookmarksFile
     if filereadable(bookmarksFile)
         let bookmarksStrs = readfile(bookmarksFile)
         let bookmarks = []
@@ -39,7 +39,7 @@ endfunction
                 
 let g:startify_files_number = 5            
 let g:startify_lists = [
-      \ { 'header': ['  NERDTree'],   'type': function('s:nerdtreeBookmarks')},
+      \ { 'header': ['  Bookmarks'],   'type': function('s:nerdtreeBookmarks')},
       \ { 'header': ['  MRU'],     'type': 'files',          },
       \ { 'header': ['  Commands'],   'type': 'commands',       },
       \ { 'header': ['  Sessions'],   'type': 'sessions',       },
