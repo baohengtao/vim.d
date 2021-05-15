@@ -11,9 +11,8 @@ nnoremap <leader>gd :<C-U>Clap git_diff_files<CR>
 nnoremap <leader>gc :<C-U>Clap commits<CR>
 nnoremap <leader>fb :<C-U>Clap buffers<CR>
 nnoremap <leader>fw :<C-U>Clap windows<CR>
-" nnoremap <expr> <leader>tc len(bufname('%')) ? ":NERDTreeToggle %<CR>" : ":NERDTreeToggle<CR>"
-nnoremap <leader>tt :<C-U>NERDTreeToggle<CR>
-nnoremap <leader>tc :<C-U>NERDTreeToggle %<CR>
+nnoremap <leader>tc :<C-U>Fern %:h -drawer -toggle -keep<CR>
+nnoremap <leader>tt :<C-U>Fern . -reveal=% -drawer -toggle -keep<CR>
 " }}}
 
 " Programming {{{
@@ -28,5 +27,18 @@ nmap <silent> <leader>rn <Plug>(coc-rename)
 
 let g:sendtorepl_invoke_key = "<leader>w"
 nnoremap <leader>r :REPLToggle<Cr>
+
+
+let g:fern#mapping#fzf#disable_default_mappings = 1
+function! s:init_fern_mapping_fzf() abort
+  nmap <buffer> F <Plug>(fern-action-fzf-files)
+  nmap <buffer> d <Plug>(fern-action-fzf-dirs)
+  nmap <buffer> A <Plug>(fern-action-fzf-both)
+endfunction
+
+augroup my-fern-mapping-fzf
+  autocmd! *
+  autocmd FileType fern call s:init_fern_mapping_fzf()
+augroup END
 
 
