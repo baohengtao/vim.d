@@ -22,6 +22,7 @@ Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python' " select text obj
 " file exploer --------------------{{{
 Plug 'ryanoasis/vim-devicons'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+  \ | let g:clap_layout = { 'relative': 'editor' }
 Plug 'tpope/vim-fugitive'
 Plug 'lambdalisue/fern.vim' | Plug 'lambdalisue/fern-git-status.vim' 
   \ | Plug 'lambdalisue/nerdfont.vim'
@@ -34,6 +35,7 @@ Plug 'lambdalisue/fern.vim' | Plug 'lambdalisue/fern-git-status.vim'
   \ | Plug 'junegunn/fzf.vim'
   \ | let g:fern#renderer = "nerdfont"
   \ | let g:fern#disable_default_mappings = 1
+  \ | let g:fern#mapping#fzf#disable_default_mappings = 1
 
 augroup my-glyph-palette
   autocmd! *
