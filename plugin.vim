@@ -7,20 +7,23 @@ call plug#begin('$XDG_CONFIG_HOME/nvim/vimplug')
 "                                   writing                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'hotoo/pangu.vim' 
-autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 Plug 'lervag/vimtex'
+Plug 'lyokha/vim-xkbswitch'
+autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
+
+" vimtex setting
+let g:tex_flavor = 'latex'
+" disable auto display error, :copen to manually open
+let g:vimtex_quickfix_mode = 0 
+let g:tex_conceal = 'abdmg' 
+
+" let g:vimwiki_list = [ {'path': '~/vimwiki/', 'syntax':'markdown', 'ext': '.md'} ] 
 
 " Enable Chinese Support
-Plug 'lyokha/vim-xkbswitch'
 let g:XkbSwitchEnabled =1  
-
-
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   Develop                                    "
@@ -32,17 +35,20 @@ let g:virtualenv_auto_activate=1
 Plug 'neoclide/coc.nvim', {'branch': 'release'} 
 let g:coc_node_path = $HOME . '/.local/n/bin/node'
 
-Plug 'liuchengxu/vista.vim' " tag bar with lsp
-
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "coolsnips"] 
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit=
   \ $XDG_CONFIG_HOME . '/nvim/coolsnips'
 
-Plug 'urbainvaes/vim-ripple' | Plug 'machakann/vim-highlightedyank' " repl
-Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python' " select text obj
-Plug 'sheerun/vim-polyglot' " syntax highlighting
+" tag bar with lsp
+Plug 'liuchengxu/vista.vim'
+" repl
+Plug 'urbainvaes/vim-ripple' | Plug 'machakann/vim-highlightedyank'
+" select text obj
+Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python'
+" syntax highlighting
+Plug 'sheerun/vim-polyglot'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                     search                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -60,10 +66,6 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 let g:fzf_tags_command = 'ctags -R'
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
-
-
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                    Fern                                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -77,6 +79,8 @@ Plug 'lambdalisue/fern-bookmark.vim'
 Plug 'LumaKernel/fern-mapping-fzf.vim'
 let g:fern#renderer = "nerdfont"
 let g:fern#disable_default_mappings = 1
+let g:fern#disable_drawer_auto_resize=0
+let g:fern#disable_drawer_auto_winfixwidth=0
 let g:fern#mapping#fzf#disable_default_mappings = 1
 
 augroup my-glyph-palette
@@ -120,18 +124,13 @@ function! s:init_fern() abort
   nmap <buffer> < <Plug>(fern-action-leave)
   nmap <buffer> > <Plug>(fern-action-enter)
   nmap <buffer> q :<C-u>quit<CR>
+  nmap <buffer> = <Plug>(fern-action-zoom:reset)
 endfunction
 
 augroup fern-custom
   autocmd! *
   autocmd FileType fern call s:init_fern()
 augroup END
-
-
-
-
-
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                    tool                                    "
@@ -145,10 +144,15 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired' 
 " edit with sudo
 Plug 'lambdalisue/suda.vim' 
-
+Plug 'simeji/winresizer'
+let g:winresizer_enable=1
+let g:winresizer_gui_enable=1
 Plug 'mbbill/undotree'
 
-Plug 't9md/vim-choosewin'  | let g:choosewin_overlay_enable = 0
+Plug 't9md/vim-choosewin'
+Plug 'talek/obvious-resize'
+let g:obvious_resize_default = 2
+let g:obvious_resize_run_tmux = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   startup                                    "

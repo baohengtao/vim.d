@@ -22,7 +22,7 @@ nnoremap <leader>ff :<C-U>Clap files<CR>
 nnoremap <leader>fs :<C-U>Clap grep2<CR>
 nnoremap <leader>fg :<C-U>Clap gfiles<CR>
 " nnoremap <leader>gd :<C-U>Clap git_diff_files<CR>
-nnoremap <leader>gd :<C-U>Gdiff<CR>
+nnoremap <leader>gd :<C-U>Gvdiff<CR>
 nnoremap <leader>gg :<C-U>ToggleGStatus<CR>
 nnoremap <leader>gc :<C-U>Clap commits<CR>
 nnoremap <leader>fb :<C-U>Clap buffers<CR>
@@ -45,9 +45,15 @@ nmap <silent> <leader>rn <Plug>(coc-rename)
 let g:sendtorepl_invoke_key = "<leader>w"
 nnoremap <leader>r :REPLToggle<Cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                  Windows                                   "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-
+noremap <silent> <C-Up> :<C-U>ObviousResizeUp<CR>
+noremap <silent> <C-Down> :<C-U>ObviousResizeDown<CR>
+noremap <silent> <C-Left> :<C-U>ObviousResizeLeft<CR>
+noremap <silent> <C-Right> :<C-U>ObviousResizeRight<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             Basic Key Binding                              "
