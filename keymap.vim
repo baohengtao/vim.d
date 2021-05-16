@@ -10,7 +10,6 @@ nnoremap <leader>bd :Kwbd<CR>
 
 
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                  Plug Map                                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -21,8 +20,9 @@ nnoremap <leader><leader> :Clap<CR>
 nnoremap <leader>fr :<C-U>Clap history<CR>
 nnoremap <leader>ff :<C-U>Clap files<CR>
 nnoremap <leader>fs :<C-U>Clap grep2<CR>
-nnoremap <leader>gf :<C-U>Clap gfiles<CR>
-nnoremap <leader>gd :<C-U>Clap git_diff_files<CR>
+nnoremap <leader>fg :<C-U>Clap gfiles<CR>
+" nnoremap <leader>gd :<C-U>Clap git_diff_files<CR>
+nnoremap <leader>gd :<C-U>Gdiff<CR>
 nnoremap <leader>gg :<C-U>ToggleGStatus<CR>
 nnoremap <leader>gc :<C-U>Clap commits<CR>
 nnoremap <leader>fb :<C-U>Clap buffers<CR>
