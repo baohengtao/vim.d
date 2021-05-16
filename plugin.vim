@@ -1,4 +1,27 @@
 call plug#begin('$XDG_CONFIG_HOME/nvim/vimplug')
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                   writing                                    "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+Plug 'vimwiki/vimwiki'
+Plug 'plasticboy/vim-markdown'
+Plug 'hotoo/pangu.vim' 
+autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
+Plug 'lervag/vimtex'
+
+" Enable Chinese Support
+Plug 'lyokha/vim-xkbswitch'
+let g:XkbSwitchEnabled =1  
+
+
+
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   Develop                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
