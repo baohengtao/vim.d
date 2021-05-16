@@ -27,8 +27,7 @@ set background=dark
 colorscheme dracula
 highlight Normal ctermbg=none
 
-
-
-
-
-
+set guifont=Monaco\ Nerd\ Font\ Mono
+set guifontwide=PingFang\ SC
+set guioptions-=r
+set guioptions-=L

@@ -1,3 +1,5 @@
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   Coding                                   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -23,13 +25,15 @@ imap <C-l> <Plug>(coc-snippets-expand)
 " self defined function
 nnoremap <leader>` :ToggleTerminal<CR>
 tnoremap <leader>` <C-w>N:ToggleTerminal<CR>
+nnoremap <leader>i :tab term<CR>
+tnoremap <C-W> <C-\><C-n>:close<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                  Fern                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <leader>tc :<C-U>Fern %:h -drawer -toggle -keep -width=30<CR>
-nnoremap <leader>tt :<C-U>Fern . -reveal=% -drawer -toggle -width=30<CR>
+nnoremap <leader>tc :<C-U>Fern %:h -drawer -toggle -keep -width=25<CR>
+nnoremap <leader>tt :<C-U>Fern . -reveal=% -drawer -toggle -width=25<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                    Clap                                    "
@@ -48,12 +52,23 @@ nnoremap <leader>fw :<C-U>Clap windows<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                    Git                                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 nnoremap <leader>gg :<C-U>ToggleGStatus<CR>
 nnoremap <leader>gc :<C-U>Clap commits<CR>
 nnoremap <leader>gd :<C-U>Gvdiff<CR>
 
+" gitgutter
+let g:gitgutter_map_keys=0
+set foldtext=gitgutter#fold#foldtext()
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap [c <Plug>(GitGutterPrevHunk)
+nmap <Leader>hs <Plug>(GitGutterStageHunk)
+nmap <Leader>hu <Plug>(GitGutterUndoHunk)
+nmap <Leader>hp <Plug>(GitGutterPreviewHunk)
 
+omap ih <Plug>(GitGutterTextObjectInnerPending)
+omap ah <Plug>(GitGutterTextObjectOuterPending)
+omap ih <Plug>(GitGutterTextObjectInnerVisual)
+omap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                  Windows                                   "

@@ -31,14 +31,14 @@ autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing(
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   Preference                          "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+" auto resize when host window size change
+autocmd VimResized * wincmd =
 " Some servers have issues with backup files, see #649.
 " for coc compality
 set nobackup
 set nowritebackup
 set shortmess+=c
 set completeopt=noinsert,noselect,menuone
-
 set cmdheight=2
 set signcolumn=number
 set splitbelow
@@ -46,9 +46,6 @@ set splitright
 set hidden 
 set laststatus=2
 set conceallevel=2
-" Gui
-set guifont=Monaco\ Nerd\ Font\ Mono
-set guioptions=r
 
 " Sessions
 set sessionoptions-=buffers

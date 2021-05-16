@@ -15,7 +15,9 @@ let g:lightline.active.left=[
 let g:lightline.active.right=[
                   \ [ 'lineinfo' ],
                   \ [ 'percent' ],
-                  \ [ 'filetype' ]]
+                  \ [ 'filetype' ],
+                  \ [ 'gitstatus'],
+                  \]
 
 
 
@@ -32,7 +34,8 @@ let g:lightline.component_function={
                   \ 'readonly' : 'LightlineReadonly',
                   \ 'method' : 'NearestMethodOrFunction',
                   \ 'fileformat' : 'MyFileformat',
-                  \ 'filename' : 'MyFilename'
+                  \ 'filename' : 'MyFilename',
+                  \ 'gitstatus' : 'GitStatus',
                   \ }
 
 let g:lightline.component={'lineinfo': ' %3l:%-2v', }
@@ -48,6 +51,11 @@ function! LightlineFugitive()
     return branch !=# '' ? ' '.branch : '' 
   endif 
   return '' 
+endfunction
+
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
 endfunction
 
 function! PyEnv() 

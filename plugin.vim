@@ -12,6 +12,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'hotoo/pangu.vim' 
 Plug 'lervag/vimtex'
 Plug 'lyokha/vim-xkbswitch'
+" Plug 'c9s/zhwrap.vim'
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
 " vimtex setting
@@ -49,13 +50,19 @@ Plug 'urbainvaes/vim-ripple' | Plug 'machakann/vim-highlightedyank'
 Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python'
 " syntax highlighting
 Plug 'sheerun/vim-polyglot'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                   Git                                    "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+zsh:1: no such file or directory: /Users/htao/.vim/bin/zhwrap
 "                                     search                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
   \ | let g:clap_layout = { 'relative': 'editor' }
-Plug 'tpope/vim-fugitive'
 
 Plug 'junegunn/fzf.vim' | Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 let $FZF_DEFAULT_COMMAND="fd  --no-ignore-vcs "
@@ -80,8 +87,9 @@ Plug 'LumaKernel/fern-mapping-fzf.vim'
 let g:fern#renderer = "nerdfont"
 let g:fern#disable_default_mappings = 1
 let g:fern#disable_drawer_auto_resize=0
-let g:fern#disable_drawer_auto_winfixwidth=0
+let g:fern#disable_drawer_auto_winfixwidth=1
 let g:fern#mapping#fzf#disable_default_mappings = 1
+let g:fern#drawer_width = 25
 
 augroup my-glyph-palette
   autocmd! *

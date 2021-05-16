@@ -5,3 +5,5 @@ pack/
 vimplug/
 .netrwhist
 autoload/plug.vim
+map.txt
+bookmarks
