@@ -64,14 +64,21 @@ augroup END
 
 function! s:init_fern() abort
   nmap <buffer><expr>
-    \ <Plug>(fern-my-open-expand-collapse)
+    \ <Plug>(fern-my-cr)
+    \ fern#smart#leaf(
+    \ "\<Plug>(fern-action-open:select)",
+    \ "\<Plug>(fern-action-expand:stay)",
+    \ "\<Plug>(fern-action-collapse)",
+    \)
+  nmap <buffer><expr>
+    \ <Plug>(fern-my-mouse)
     \ fern#smart#leaf(
     \ "\<Plug>(fern-action-open)",
     \ "\<Plug>(fern-action-expand:stay)",
     \ "\<Plug>(fern-action-collapse)",
     \)
-  nmap <buffer> <2-LeftMouse> <Plug>(fern-my-open-expand-collapse)
-  nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
+  nmap <buffer> <2-LeftMouse> <Plug>(fern-my-mouse)
+  nmap <buffer> <CR> <Plug>(fern-my-cr)
   nmap <buffer> n <Plug>(fern-action-new-path)
   nmap <buffer> d <Plug>(fern-action-trash)
   nmap <buffer> m <Plug>(fern-action-move)

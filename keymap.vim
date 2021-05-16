@@ -3,8 +3,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>` :ToggleTerminal<CR>
 tnoremap <leader>` <C-w>N:ToggleTerminal<CR>
-
-
+nnoremap <leader>bd :Kwbd<CR> 
 
 
 
