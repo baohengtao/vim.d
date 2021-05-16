@@ -56,8 +56,6 @@ Plug 'sheerun/vim-polyglot'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-
-zsh:1: no such file or directory: /Users/htao/.vim/bin/zhwrap
 "                                     search                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
