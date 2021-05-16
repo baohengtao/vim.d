@@ -1,4 +1,21 @@
-" Function Map {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                   Function Map                                    "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>` :ToggleTerminal<CR>
+tnoremap <leader>` <C-w>N:ToggleTerminal<CR>
+
+
+
+
+
+
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                  Plug Map                                  "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 nnoremap <leader>s :tabnew \| Startify<CR>
 nnoremap <leader>p :<C-U>Clap command<CR>
 nnoremap <leader><leader> :Clap<CR>
@@ -7,13 +24,14 @@ nnoremap <leader>ff :<C-U>Clap files<CR>
 nnoremap <leader>fs :<C-U>Clap grep2<CR>
 nnoremap <leader>gf :<C-U>Clap gfiles<CR>
 nnoremap <leader>gd :<C-U>Clap git_diff_files<CR>
+nnoremap <leader>gg :<C-U>ToggleGStatus<CR>
 nnoremap <leader>gc :<C-U>Clap commits<CR>
 nnoremap <leader>fb :<C-U>Clap buffers<CR>
 nnoremap <leader>fw :<C-U>Clap windows<CR>
 nnoremap <leader>tc :<C-U>Fern %:h -drawer -toggle -keep -width=30<CR>
 nnoremap <leader>tt :<C-U>Fern . -reveal=% -drawer -toggle -width=30<CR>
 nmap - <Plug>(choosewin)
-" }}}
+
 
 " Programming {{{
 nmap <silent> gd <Plug>(coc-definition)
@@ -112,46 +130,4 @@ if exists('*complete_info')
   inoremap <silent><expr> <cr> complete_info(['selected'])['selected'] != -1 ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 " }}}
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                             Function                                  "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Terminal
-let g:toggle_term = "<leader>`"
-let s:term_buf_nr = -1
-function! ToggleTerminal()
-    if s:term_buf_nr == -1
-      if has('nvim')
-        execute "split | bot term"
-      else
-        execute "bot term"
-      endif
-      let s:term_buf_nr = bufnr("$")
-    else
-        execute "bd! " .s:term_buf_nr
-        let s:term_buf_nr = -1
-    endif
-endfunction
-execute "nnoremap ".g:toggle_term ." :call ToggleTerminal()<CR>"
-execute "tnoremap ".g:toggle_term ." <C-w>N:call ToggleTerminal()<CR>"
-
-
-" Reveal In Finder
-function! s:RevealInFinder()
-  if filereadable(expand("%"))
-    let l:command = "open -R " . shellescape("%")
-  elseif getftype(expand("%:p:h")) == "dir"
-    let l:command = "open " . shellescape("%") . ":p:h"
-  else
-    let l:command = "open ."
-  endif
-
-  execute ":silent! !" . l:command
-
-  " For terminal Vim not to look messed up.
-  redraw!
-endfunction
-
-command! Reveal call <SID>RevealInFinder()
-
 

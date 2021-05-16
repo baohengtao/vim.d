@@ -1,5 +1,4 @@
 call plug#begin('$XDG_CONFIG_HOME/nvim/vimplug')
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   Develop                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -40,22 +39,6 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
 
 
-
-function! s:fasd_update() abort
-  if empty(&buftype) || &filetype ==# 'dirvish'
-    if has('nvim')
-      call jobstart(['fasd', '-A', expand('%:p')])
-    else
-      call job_start(['fasd', '-A', expand('%:p')])
-    endif
-  endif
-endfunction
-augroup fasd
-  autocmd!
-  autocmd BufWinEnter,BufFilePost * call s:fasd_update()
-augroup END
-command! FASD call fzf#run(fzf#wrap({'source': 'fasd -al', 'options': '--no-sort --tac --tiebreak=index'}))
-nnoremap <silent> <Leader>e :FASD<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -119,21 +102,6 @@ augroup END
 
 
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                   writing                                    "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-Plug 'vimwiki/vimwiki'
-Plug 'plasticboy/vim-markdown'
-Plug 'hotoo/pangu.vim' 
-autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
-Plug 'lervag/vimtex'
-
-" Enable Chinese Support
-Plug 'lyokha/vim-xkbswitch'
-let g:XkbSwitchEnabled =1  
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                    tool                                    "
