@@ -7,9 +7,9 @@ let s:term_buf_nr = -1
 function! s:ToggleTerminal()
     if s:term_buf_nr == -1
       if has('nvim')
-        execute "split | bot term"
+        execute "vert split | bot term"
       else
-        execute "bot term"
+        execute "vert bot term"
       endif
       let s:term_buf_nr = bufnr("$")
     else
