@@ -56,6 +56,7 @@ Plug 'sheerun/vim-polyglot'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'jreybert/vimagit'
 "                                     search                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -171,6 +172,7 @@ let g:startify_session_directory = g:session_directory
 let g:startify_session_dir = g:session_directory
 let g:BookmarksFile = expand('$XDG_CONFIG_HOME') . '/nvim/bookmarks' 
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'flazz/vim-colorschemes'
 Plug 'itchyny/lightline.vim'| Plug 'itchyny/vim-gitbranch'
 Plug 'psliwka/vim-smoothie'
 

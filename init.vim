@@ -26,8 +26,29 @@ autocmd! BufReadPost,BufNewFile * call SetupEnvironment()
 set background=dark
 colorscheme dracula
 highlight Normal ctermbg=none
-
-set guifont=Monaco\ Nerd\ Font\ Mono
-set guifontwide=PingFang\ SC
 set guioptions-=r
-set guioptions-=L
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                    font                                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+let g:mono_font='Monaco\ Nerd\ Font\ Mono'
+let g:chinese_font='Sarasa\ Fixed\ CL'
+let g:font_state=0
+
+function! s:ChangeFont()
+  if g:font_state == 0 
+    execute "set guifont=" . g:chinese_font
+    let g:font_state = 1
+  else
+    execute "set guifont=" . g:mono_font
+    let g:font_state=0
+
+  endif
+endfunction
+command! ChangeFont call <SID>ChangeFont()
+
+execute "set guifont=" . g:mono_font
+
+
