@@ -1,9 +1,13 @@
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                   Alias                                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+cnoreabbrev <expr> H getcmdtype() == ":" && getcmdline() == "h" ? "tab h" : "h"
+command T tabnew
+au CmdlineLeave : if getcmdline() =~# '^h\%[elp]\s' | exe 'e ' .. &helpfile | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   Coding                                   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " neoclide/coc/nvim
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -12,7 +16,8 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>rn <Plug>(coc-rename)
-
+nmap <silent> w <Plug>(coc-ci-w)
+nmap <silent> b <Plug>(coc-ci-b)
 " SirVer/ultisnips
 let g:UltiSnipsExpandTrigger="<c-u>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -89,8 +94,6 @@ nnoremap <leader>bd :Kwbd<CR>
 nnoremap <Leader>k :m .-2<CR>==
 nnoremap <Leader>j :m .+1<CR>==
 
-" Aias
-command T tabnew
 
 
 nnoremap <C-q> :qa!<cr>

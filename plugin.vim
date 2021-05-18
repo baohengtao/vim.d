@@ -7,24 +7,41 @@ call plug#begin('$XDG_CONFIG_HOME/nvim/vimplug')
 "                                   writing                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" add space between chinese and ascii
+Plug 'hotoo/pangu.vim' 
+autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
+" align tabular
+Plug 'godlygeek/tabular'
+" support chinese input source 
+Plug 'lyokha/vim-xkbswitch'
+let g:XkbSwitchEnabled =1  
+
+" autopair
+" Plug 'jiangmiao/auto-pairs'
+" let g:AutoPairsFlyMode=0
+" let g:AutoPairsShortcutBackInsert='<M-b>'
+
+
+
+" vimwiki markdown 
 Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
-Plug 'hotoo/pangu.vim' 
-Plug 'lervag/vimtex'
-Plug 'lyokha/vim-xkbswitch'
-" Plug 'c9s/zhwrap.vim'
-autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
-" vimtex setting
-let g:tex_flavor = 'latex'
-" disable auto display error, :copen to manually open
+" vimtex
+Plug 'lervag/vimtex'
+ let g:tex_flavor = 'latex'
+ " disable auto display error, :copen to manually open
 let g:vimtex_quickfix_mode = 0 
 let g:tex_conceal = 'abdmg' 
 
-" let g:vimwiki_list = [ {'path': '~/vimwiki/', 'syntax':'markdown', 'ext': '.md'} ] 
 
-" Enable Chinese Support
-let g:XkbSwitchEnabled =1  
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                      Add language support in  writing
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-ultisnips'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   Develop                                    "
@@ -55,13 +72,21 @@ Plug 'sheerun/vim-polyglot'
 "                                   Git                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'jreybert/vimagit'
-"                                     search                                 "
+"                                    search                                 "
+
+" highlight DiffAdd     term=bold    cterm=bold ctermfg=231 ctermbg=64 gui=bold guifg=#f0f0f0 guibg=#43820d
+" highlight DiffChange  term=bold    ctermfg=231 ctermbg=23 guifg=#f0f0f0 guibg=#1c3657 
+" highlight DiffDelete  term=bold    ctermfg=88 guifg=#880708 
+" highlight DiffText    term=reverse cterm=bold ctermfg=231 ctermbg=24 gui=bold guifg=#f0f0f0 guibg=#204a87  
+" highlight SignifySignAdd    ctermfg=green  guifg=#00ff00 cterm=NONE gui=NONE 
+" highlight SignifySignDelete ctermfg=red    guifg=#ff0000 cterm=NONE gui=NONE
+" highlight SignifySignChange ctermfg=yellow guifg=#ffff00 cterm=NONE gui=NONE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
-  \ | let g:clap_layout = { 'relative': 'editor' }
+let g:clap_layout = { 'relative': 'editor' }
 
 Plug 'junegunn/fzf.vim' | Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 let $FZF_DEFAULT_COMMAND="fd  --no-ignore-vcs "

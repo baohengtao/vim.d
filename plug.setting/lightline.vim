@@ -42,10 +42,11 @@ let g:lightline.component={'lineinfo': ' %3l:%-2v', }
 let g:lightline.separator={ 'left': '', 'right': '' }
 let g:lightline.subseparator={ 'left': '', 'right': '' }
 
-function! LightlineReadonly() 
+
+function! LightlineReadonly() abort 
   return &readonly ? '' : '' 
 endfunction 
-function! LightlineFugitive() 
+function! LightlineFugitive() abort 
   if exists('*FugitiveHead') 
     let branch = FugitiveHead() 
     return branch !=# '' ? ' '.branch : '' 
@@ -53,12 +54,12 @@ function! LightlineFugitive()
   return '' 
 endfunction
 
-function! GitStatus()
-  let [a,m,r] = GitGutterGetHunkSummary()
-  return printf('+%d ~%d -%d', a, m, r)
-endfunction
+" function! GitStatus() abort
+"   let [a,m,r] = GitGutterGetHunkSummary()
+"   return printf('+%d ~%d -%d', a, m, r)
+" endfunction
 
-function! PyEnv() 
+function! PyEnv()  abort
   if exists('*virtualenv#statusline') 
     let env=virtualenv#statusline()
     return env !=# '' ? '🐍  '.env : '' 
@@ -67,7 +68,7 @@ function! PyEnv()
 endfunction 
 
 
-function! MySession() 
+function! MySession() abort
   if exists('*xolox#session#find_current_session') 
     let session=xolox#session#find_current_session()
     return session !=# '' ? ' '.session : '' 
@@ -85,7 +86,7 @@ function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
 
-function! MyFileformat()
+function! MyFileformat() abort
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
