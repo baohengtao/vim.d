@@ -82,7 +82,7 @@ function! NearestMethodOrFunction() abort
 endfunction
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
-function! MyFiletype()
+function! MyFiletype() abort
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
 
@@ -90,7 +90,7 @@ function! MyFileformat() abort
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
-function! MyFilename()
+function! MyFilename() abort
   let root = fnamemodify(get(b:, 'git_dir'), ':h')
   let path = expand('%:p')
   if path[:len(root)-1] ==# root

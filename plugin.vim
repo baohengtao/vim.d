@@ -73,8 +73,9 @@ Plug 'sheerun/vim-polyglot'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
-
+let g:gitgutter_signs=0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
@@ -92,7 +93,8 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                    Fern                                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'lambdalisue/fern.vim' | Plug 'lambdalisue/fern-git-status.vim' 
+Plug 'lambdalisue/fern.vim' 
+Plug 'lambdalisue/fern-git-status.vim' 
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim' 
@@ -106,12 +108,13 @@ let g:fern#disable_drawer_auto_resize=0
 let g:fern#disable_drawer_auto_winfixwidth=1
 let g:fern#mapping#fzf#disable_default_mappings = 1
 let g:fern#drawer_width = 25
-
-augroup my-glyph-palette
-  autocmd! *
-  autocmd FileType fern call glyph_palette#apply()
-  autocmd FileType nerdtree,startify call glyph_palette#apply()
-augroup END
+if has_key(plugs, 'glyph-palette') 
+  augroup my-glyph-palette
+    autocmd! *
+    autocmd FileType fern call glyph_palette#apply()
+    autocmd FileType nerdtree,startify call glyph_palette#apply()
+  augroup END
+endif 
 
 function! s:init_fern() abort
   nmap <buffer><expr>

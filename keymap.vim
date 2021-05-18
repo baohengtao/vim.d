@@ -57,7 +57,7 @@ nnoremap <leader>fw :<C-U>Clap windows<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                    Git                                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>gg :<C-U>ToggleGStatus<CR>
+nnoremap <leader>gs :<C-U>ToggleGStatus<CR>
 nnoremap <leader>gc :<C-U>Clap commits<CR>
 nnoremap <leader>gd :<C-U>Gvdiff<CR>
 

@@ -4,7 +4,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terminal
 let s:term_buf_nr = -1
-function! s:ToggleTerminal()
+function! s:ToggleTerminal() abort
     if s:term_buf_nr == -1
       if has('nvim')
         execute "vert split | bot term"
@@ -21,7 +21,7 @@ command! ToggleTerminal call <SID>ToggleTerminal()
 
 
 " Reveal In Finder
-function! s:RevealInFinder()
+function! s:RevealInFinder() abort
   if filereadable(expand("%"))
     let l:command = "open -R " . shellescape("%")
   elseif getftype(expand("%:p:h")) == "dir"
@@ -73,7 +73,7 @@ command! ToggleGStatus call <SID>ToggleGStatus()
 
 "here is a more exotic version of my original Kwbd script
 "delete the buffer; keep windows; create a scratch buffer if no buffers left
-function s:Kwbd(kwbdStage)
+function s:Kwbd(kwbdStage) abort
   if(a:kwbdStage == 1)
     if(&modified)
       let answer = confirm("This buffer has been modified.  Are you sure you want to delete it?", "&Yes\n&No", 2)
