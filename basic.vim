@@ -41,7 +41,8 @@ set nowritebackup
 set shortmess+=c
 set completeopt=noinsert,noselect,menuone
 set cmdheight=2
-set signcolumn=number
+set signcolumn=auto
+set numberwidth=1
 set splitbelow
 set splitright
 set hidden 

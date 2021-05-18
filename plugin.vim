@@ -74,15 +74,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'jreybert/vimagit'
-"                                    search                                 "
 
-" highlight DiffAdd     term=bold    cterm=bold ctermfg=231 ctermbg=64 gui=bold guifg=#f0f0f0 guibg=#43820d
-" highlight DiffChange  term=bold    ctermfg=231 ctermbg=23 guifg=#f0f0f0 guibg=#1c3657 
-" highlight DiffDelete  term=bold    ctermfg=88 guifg=#880708 
-" highlight DiffText    term=reverse cterm=bold ctermfg=231 ctermbg=24 gui=bold guifg=#f0f0f0 guibg=#204a87  
-" highlight SignifySignAdd    ctermfg=green  guifg=#00ff00 cterm=NONE gui=NONE 
-" highlight SignifySignDelete ctermfg=red    guifg=#ff0000 cterm=NONE gui=NONE
-" highlight SignifySignChange ctermfg=yellow guifg=#ffff00 cterm=NONE gui=NONE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }

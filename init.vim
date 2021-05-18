@@ -33,13 +33,13 @@ set guioptions-=r
 "                                    font                                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("gui_macvim")
-  " hi DiffAdd      gui=none    guifg=NONE          guibg=#bada9f
-  " hi DiffChange   gui=none    guifg=NONE          guibg=#e5d5ac
-  " hi DiffDelete   gui=bold    guifg=#ff8080       guibg=#ffb0b0
-  " hi DiffText     gui=none    guifg=NONE          guibg=#8cbee2
-
-  " hi diffadd ctermfg=green guifg=#00ff00
-  " hi diffdelete ctermfg=red guifg=#ff0000
+  highlight DiffAdd     term=bold    cterm=bold ctermfg=231 ctermbg=64 gui=bold guifg=#f0f0f0 guibg=#43820d
+  highlight DiffChange  term=bold    ctermfg=231 ctermbg=23 guifg=#f0f0f0 guibg=#1c3657 
+  highlight DiffDelete  term=bold    ctermfg=88 guifg=#880708 
+  highlight DiffText    term=reverse cterm=bold ctermfg=231 ctermbg=24 gui=bold guifg=#f0f0f0 guibg=#204a87  
+  highlight SignifySignAdd    ctermfg=green  guifg=#00ff00 cterm=NONE gui=NONE 
+  highlight SignifySignDelete ctermfg=red    guifg=#ff0000 cterm=NONE gui=NONE
+  highlight SignifySignChange ctermfg=yellow guifg=#ffff00 cterm=NONE gui=NONE
 
   let g:mono_font='Monaco\ Nerd\ Font\ Mono'
   let g:chinese_font='Sarasa\ Fixed\ CL'
