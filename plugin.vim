@@ -70,13 +70,15 @@ Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
 let g:coc_node_path = $HOME . '/.local/n/bin/node'
 let g:coc_global_extensions = [
-  \ 'coc-tsserver', 'coc-list', 
+  \ 'coc-tsserver', 'coc-lists', 
   \ 'coc-pyright', 'coc-tabnine', 'coc-pydocstring',
   \ 'coc-json', 'coc-vimlsp',
-  \ 'coc-texlab', 'coc-markdownlint', 'coc-snippets',
+  \ 'coc-texlab', 'coc-markdownlint', 
+  \ 'coc-snippets', 'coc-ultisnips',
   \ 'coc-git', 'coc-gist',
-  \ 'coc-higlight', 'coc-thrift-syntax-support',
-  \ 'coc-yank', 'coc-ci', 'fzf-preview'
+  \ 'coc-highlight', 'coc-thrift-syntax-support',
+  \ 'coc-yank', 'coc-ci', 'coc-fzf-preview',
+  \ 'coc-word', 'coc-yank',
   \ ]
 Plug 'neoclide/coc.nvim', {'branch': 'release'} 
 
