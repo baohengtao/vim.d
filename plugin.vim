@@ -22,7 +22,6 @@ let g:XkbSwitchEnabled =1
 " let g:AutoPairsShortcutBackInsert='<M-b>'
 
 
-
 " vimwiki markdown 
 Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
@@ -50,8 +49,6 @@ Plug 'ncm2/ncm2-ultisnips'
 Plug 'jmcantrell/vim-virtualenv'
 let g:virtualenv_auto_activate=1
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'} 
-let g:coc_node_path = $HOME . '/.local/n/bin/node'
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "coolsnips"] 
@@ -67,13 +64,53 @@ Plug 'urbainvaes/vim-ripple' | Plug 'machakann/vim-highlightedyank'
 Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python'
 " syntax highlighting
 Plug 'sheerun/vim-polyglot'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                  coc.nvim                                  "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'dense-analysis/ale'
+let g:coc_node_path = $HOME . '/.local/n/bin/node'
+let g:coc_global_extensions = [
+  \ 'coc-tsserver', 'coc-list', 
+  \ 'coc-pyright', 'coc-tabnine', 'coc-pydocstring',
+  \ 'coc-json', 'coc-vimlsp',
+  \ 'coc-texlab', 'coc-markdownlint', 'coc-snippets',
+  \ 'coc-git', 'coc-gist',
+  \ 'coc-higlight', 'coc-thrift-syntax-support',
+  \ 'coc-yank', 'coc-ci', 'fzf-preview'
+  \ ]
+Plug 'neoclide/coc.nvim', {'branch': 'release'} 
 
+" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-lists',  {'do': 'yarn install --frozen-lockfile'}
+
+" Plug 'fannheyward/coc-pyright',  {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-tabnine',  {'do': 'yarn install --frozen-lockfile'}
+" Plug 'yaegassy/coc-pydocstring',  {'do': 'yarn install --frozen-lockfile'}
+
+" Plug 'neoclide/coc-json',  {'do': 'yarn install --frozen-lockfile'}
+" Plug 'iamcco/coc-vimlsp',  {'do': 'yarn install --frozen-lockfile'}
+
+" Plug 'fannheyward/coc-texlab',  {'do': 'yarn install --frozen-lockfile'}
+" Plug 'fannheyward/coc-markdownlint',  {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-snippets',  {'do': 'yarn install --frozen-lockfile'}
+
+" Plug 'neoclide/coc-git',  {'do': 'yarn install --frozen-lockfile'}
+" Plug 'voldikss/coc-gist',  {'do': 'yarn install --frozen-lockfile'}
+
+" Plug 'neoclide/coc-highlight',  {'do': 'yarn install --frozen-lockfile'}
+" Plug 'cposture/coc-thrift-syntax-support',  {'do': 'yarn install --frozen-lockfile'}
+
+
+" Plug 'neoclide/coc-yank',  {'do': 'yarn install --frozen-lockfile'}
+" Plug 'fannheyward/coc-ci',  {'do': 'yarn install --frozen-lockfile'}
+" Plug 'yuki-yano/fzf-preview.vim',  {'do': 'yarn install --frozen-lockfile'}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   Git                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'airblade/vim-gitgutter'
+Plug 'lambdalisue/gina.vim'
 Plug 'jreybert/vimagit'
 let g:gitgutter_signs=0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -108,13 +145,13 @@ let g:fern#disable_drawer_auto_resize=0
 let g:fern#disable_drawer_auto_winfixwidth=1
 let g:fern#mapping#fzf#disable_default_mappings = 1
 let g:fern#drawer_width = 25
-if has_key(plugs, 'glyph-palette') 
+" if has_key(plugs, 'glyph-palette') 
   augroup my-glyph-palette
     autocmd! *
     autocmd FileType fern call glyph_palette#apply()
     autocmd FileType nerdtree,startify call glyph_palette#apply()
   augroup END
-endif 
+" endif 
 
 function! s:init_fern() abort
   nmap <buffer><expr>
@@ -180,6 +217,7 @@ Plug 't9md/vim-choosewin'
 Plug 'talek/obvious-resize'
 let g:obvious_resize_default = 2
 let g:obvious_resize_run_tmux = 0
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   startup                                    "
