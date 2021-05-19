@@ -5,7 +5,6 @@ let g:maplocalleader = ','
 
 runtime basic.vim
 runtime plugin.vim
-runtime custom.vim
 runtime keymap.vim
 runtime function.vim
 echom "Hi~ (>^.^<)"
