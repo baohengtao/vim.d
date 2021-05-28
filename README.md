@@ -10,7 +10,9 @@ cd && ln $XDG_CONFIG_HOME/nvim/init.vim .vimrc
 ```
 
 ## Python
+```zsh
 pip3 install pynvim
+```
 
 
 ## Chinese Support
