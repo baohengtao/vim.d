@@ -9,6 +9,9 @@ curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs \
 cd && ln $XDG_CONFIG_HOME/nvim/init.vim .vimrc
 ```
 
+## Python
+pip3 install pynvim
+
 
 ## Chinese Support
 
