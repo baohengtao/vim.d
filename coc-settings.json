@@ -1,4 +1,23 @@
 {
   "snippets.userSnippetsDirectory": "/Users/htao/.config/nvim/coolsnips/",
-  "snippets.ultisnips.enable": true
+  "snippets.ultisnips.enable": true,
+  "tabnine.shortcut":"TNN",
+  "pyright.enable": true,
+
+  // coc-yank 
+  "yank.highlight.enable":true,
+  "yank.highlight.duration":500,
+  "yank.list.maxsize":200,
+  "yank.enableCompletion":true,
+  "yank.priority":90,
+  "yank.limit": 3,
+  "yank.byteLengthLimit": 30,
+
+  // coc-pydocstring 
+  "pydocstring.enable":true,
+  "pydocstring.formatter":"sphinx",
+
+  // coc-highlight
+  "highlight.colors.enable":true
+
 }
