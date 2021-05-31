@@ -29,7 +29,7 @@ let g:closetag_filetypes = 'html,xhtml,phtml'
 
 
 " vimwiki markdown 
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 
 " vimtex

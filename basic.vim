@@ -3,7 +3,9 @@
 "                                 file format                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
+augroup JsonToJsonc
+    autocmd! FileType json set filetype=jsonc
+augroup END
 
 augroup filetype_vim 
   autocmd!
@@ -47,7 +49,7 @@ set splitbelow
 set splitright
 set hidden 
 set laststatus=2
-set conceallevel=2
+" set conceallevel=2
 
 " Sessions
 set sessionoptions-=buffers

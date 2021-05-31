@@ -6,8 +6,8 @@ runtime basic.vim
 runtime keymap.vim
 if has('macunix')
   runtime macos.vim
-runtime plugin.vim
 endif
+runtime plugin.vim
 runtime function.vim
 echom "Hi~ (>^.^<)"
 
