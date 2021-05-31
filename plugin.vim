@@ -85,7 +85,7 @@ let g:coc_global_extensions = [
   \ 'coc-texlab', 'coc-markdownlint', 
   \ 'coc-snippets', 'coc-ultisnips',
   \ 'coc-highlight', 
-  \ 'coc-ci', 'coc-fzf-preview',
+  \ 'coc-ci',
   \ 'coc-word', 'coc-yank',
   \ ]
   " \ 'coc-git', 'coc-gist',
