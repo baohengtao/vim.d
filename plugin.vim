@@ -1,6 +1,8 @@
 call plug#begin('$XDG_CONFIG_HOME/nvim/vimplug')
 
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'} 
+
 
 Plug 'mg979/vim-visual-multi'
 
@@ -11,7 +13,7 @@ Plug 'mg979/vim-visual-multi'
 
 " add space between chinese and ascii
 Plug 'hotoo/pangu.vim' 
-autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
+" autocmd BufWritePre *.markdown,*.md,*.wiki call PanGuSpacing()
 " align tabular
 Plug 'godlygeek/tabular'
 " support chinese input source 
@@ -24,17 +26,16 @@ Plug 'alvan/vim-closetag'
 let g:closetag_filenames = '*.html'
 let g:closetag_filetypes = 'html,xhtml,phtml'
 
-" let g:AutoPairsFlyMode=0
+
+let g:AutoPairsFlyMode=0
 " let g:AutoPairsShortcutBackInsert='<M-b>'
-
-
 " vimwiki markdown 
 " Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 
 " vimtex
 Plug 'lervag/vimtex'
- let g:tex_flavor = 'latex'
+let g:tex_flavor = 'latex'
  " disable auto display error, :copen to manually open
 let g:vimtex_quickfix_mode = 0 
 " let g:tex_conceal = 'abdmg' 
@@ -51,11 +52,6 @@ Plug 'ncm2/ncm2-ultisnips'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   Develop                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-Plug 'jmcantrell/vim-virtualenv'
-let g:virtualenv_auto_activate=1
-
-
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "coolsnips"] 
 let g:UltiSnipsEditSplit="vertical"
@@ -72,49 +68,8 @@ Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python'
 Plug 'sheerun/vim-polyglot'
 
 " scheme conjure 
-Plug 'Olical/conjure'
+" Plug 'Olical/conjure'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                  coc.nvim                                  "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'dense-analysis/ale'
-let g:coc_global_extensions = [
-  \ 'coc-tsserver', 'coc-lists', 
-  \ 'coc-pyright', 'coc-tabnine', 'coc-pydocstring',
-  \ 'coc-json', 'coc-vimlsp',
-  \ 'coc-texlab', 'coc-markdownlint', 
-  \ 'coc-snippets', 'coc-ultisnips',
-  \ 'coc-highlight', 
-  \ 'coc-ci',
-  \ 'coc-word', 'coc-yank',
-  \ ]
-  " \ 'coc-git', 'coc-gist',
-Plug 'neoclide/coc.nvim', {'branch': 'release'} 
-
-" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-lists',  {'do': 'yarn install --frozen-lockfile'}
-
-" Plug 'fannheyward/coc-pyright',  {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-tabnine',  {'do': 'yarn install --frozen-lockfile'}
-" Plug 'yaegassy/coc-pydocstring',  {'do': 'yarn install --frozen-lockfile'}
-
-" Plug 'neoclide/coc-json',  {'do': 'yarn install --frozen-lockfile'}
-" Plug 'iamcco/coc-vimlsp',  {'do': 'yarn install --frozen-lockfile'}
-
-" Plug 'fannheyward/coc-texlab',  {'do': 'yarn install --frozen-lockfile'}
-" Plug 'fannheyward/coc-markdownlint',  {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-snippets',  {'do': 'yarn install --frozen-lockfile'}
-
-" Plug 'neoclide/coc-git',  {'do': 'yarn install --frozen-lockfile'}
-" Plug 'voldikss/coc-gist',  {'do': 'yarn install --frozen-lockfile'}
-
-" Plug 'neoclide/coc-highlight',  {'do': 'yarn install --frozen-lockfile'}
-" Plug 'cposture/coc-thrift-syntax-support',  {'do': 'yarn install --frozen-lockfile'}
-
-
-" Plug 'neoclide/coc-yank',  {'do': 'yarn install --frozen-lockfile'}
-" Plug 'fannheyward/coc-ci',  {'do': 'yarn install --frozen-lockfile'}
-" Plug 'yuki-yano/fzf-preview.vim',  {'do': 'yarn install --frozen-lockfile'}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   Git                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -125,13 +80,7 @@ Plug 'lambdalisue/gina.vim'
 Plug 'jreybert/vimagit'
 let g:gitgutter_signs=0
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                    Clap                                    "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
-let g:clap_layout = { 'relative': 'editor' }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   FZF                                    "
@@ -195,9 +144,8 @@ function! s:init_fern() abort
   nmap <buffer> M <Plug>(fern-action-rename)
   nmap <buffer> h <Plug>(fern-action-hidden-toggle)
   nmap <buffer> r <Plug>(fern-action-reload)
-  nmap <buffer> s <Plug>(fern-action-mark:toggle)
   nmap <buffer> o <Plug>(fern-action-open:select)
-  nmap <buffer> b <Plug>(fern-action-open:split)
+  nmap <buffer> s <Plug>(fern-action-open:split)
   nmap <buffer> v <Plug>(fern-action-open:vsplit)
   nmap <buffer> t <Plug>(fern-action-open:tabedit)
   nmap <buffer> ff <Plug>(fern-action-fzf-files)
@@ -206,8 +154,10 @@ function! s:init_fern() abort
   nmap <buffer> c <Plug>(fern-action-tcd:cursor)
   nmap <buffer> < <Plug>(fern-action-leave)
   nmap <buffer> > <Plug>(fern-action-enter)
+  nmap <buffer> > <Plug>(fern-action-enter)
   nmap <buffer> q :<C-u>quit<CR>
   nmap <buffer> = <Plug>(fern-action-zoom:reset)
+  nmap <buffer> CD <Plug>(fern-action-cd:root)
 endfunction
 
 augroup fern-custom
@@ -365,53 +315,11 @@ let g:fzf_preview_dev_icons_limit = 5000
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                   Coding                                    "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" neoclide/coc/nvim
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>rn <Plug>(coc-rename)
-nmap <silent> w <Plug>(coc-ci-w)
-nmap <silent> b <Plug>(coc-ci-b)
-" SirVer/ultisnips
-let g:UltiSnipsExpandTrigger="<c-u>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:coc_snippet_next = g:UltiSnipsJumpForwardTrigger
-let g:coc_snippet_prev = g:UltiSnipsJumpBackwardTrigger
-
-imap <C-l> <Plug>(coc-snippets-expand)
-
-" self defined function
-nnoremap <leader>` :ToggleTerminal<CR>
-tnoremap <leader>` <C-w>N:ToggleTerminal<CR>
-nnoremap <leader>i :tab term<CR>
-tnoremap <C-W> <C-\><C-n>:close<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                  Fern                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nnoremap <leader>tc :<C-U>Fern %:h -drawer -toggle -keep -width=25<CR>
 nnoremap <leader>tt :<C-U>Fern . -reveal=% -drawer -toggle -width=25<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                    Clap                                    "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-nnoremap <leader>p :<C-U>Clap command<CR>
-nnoremap <leader><leader> :Clap<CR>
-nnoremap <leader>fr :<C-U>Clap history<CR>
-nnoremap <leader>ff :<C-U>Clap files<CR>
-nnoremap <leader>fs :<C-U>Clap grep2<CR>
-nnoremap <leader>fg :<C-U>Clap gfiles<CR>
-nnoremap <leader>fb :<C-U>Clap buffers<CR>
-nnoremap <leader>fw :<C-U>Clap windows<CR>
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                    Git                                     "

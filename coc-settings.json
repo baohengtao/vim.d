@@ -1,10 +1,15 @@
 {
   "snippets.userSnippetsDirectory": "/Users/htao/.config/nvim/coolsnips/",
   "snippets.ultisnips.enable": true,
-  "tabnine.shortcut":"TNN",
-  "pyright.enable": true,
-
-  // coc-yank 
+  
+  // python
+  // "pyright.enable": false,
+  // "pyright.disableDiagnostics": true,
+  // "python.formatting.provider":"autopep8",
+  // "python.linting.enabled": true,
+  // "python.linting.flake8Enabled": true,
+  "python.pythonPath": "/Users/htao/.local/pyenv/shims/python",
+    // coc-yank 
   "yank.highlight.enable":true,
   "yank.highlight.duration":500,
   "yank.list.maxsize":200,
@@ -19,7 +24,10 @@
 
   // coc-highlight
   "highlight.colors.enable":true,
-  //oth
-  "diagnostic.displayByAle": true
+  "suggest.maxCompleteItemCount": 20,
+
+  "coc.source.buffer.priority": 1
+
+
 
 }

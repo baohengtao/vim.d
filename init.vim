@@ -7,10 +7,9 @@ let g:coc_node_path = $HOME . '/.local/n/bin/node'
 runtime basic.vim
 runtime keymap.vim
 runtime plugin.vim
+runtime coc.vim
 runtime function.vim
 echom "Hi~ (>^.^<)"
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   colors                              "
