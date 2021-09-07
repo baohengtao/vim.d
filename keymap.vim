@@ -65,3 +65,9 @@ if exists('*complete_info')
 endif
 " }}}
 
+" self defined function
+nnoremap <leader>` :ToggleTerminal<CR>
+tnoremap <leader>` <C-w>N:ToggleTerminal<CR>
+nnoremap <leader>i :tab term<CR>
+
+

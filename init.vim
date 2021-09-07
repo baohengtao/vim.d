@@ -1,12 +1,11 @@
 set runtimepath+=$XDG_CONFIG_HOME/nvim
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
+let g:python3_host_prog =  '/Users/htao/.local/pyenv/versions/3.9.6/envs/nvim/bin/python3'
+let g:coc_node_path = $HOME . '/.local/n/bin/node'
 
 runtime basic.vim
 runtime keymap.vim
-if has('macunix')
-  runtime macos.vim
-endif
 runtime plugin.vim
 runtime function.vim
 echom "Hi~ (>^.^<)"
