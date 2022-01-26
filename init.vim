@@ -1,3 +1,4 @@
+
 set runtimepath+=$XDG_CONFIG_HOME/nvim
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
@@ -10,6 +11,7 @@ runtime plugin.vim
 runtime coc.vim
 runtime function.vim
 echom "Hi~ (>^.^<)"
+autocmd CursorHold * silent! checktime
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   colors                              "

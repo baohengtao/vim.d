@@ -1,0 +1,38 @@
+set scrolloff=5
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set incsearch
+set surround
+set commentary
+set highlightedyank
+set textobj-indent
+
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
+nnoremap <C-q> :qa!<cr>
+
+" escape with jj 
+inoremap jj <esc>
+cnoremap jj <C-C> 
+
+" add C-a C-e
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
+" indent
+xnoremap < <gv
+xnoremap > >gv
+
+inoremap <c-b> <Left>
+inoremap <c-f> <Right>
+
+" Use <C-L> to clear the highlighting of :set hlsearch.
+nnoremap <silent> <C-L> :nohlsearch<cr>
+
+
+" Pycharm Action
+map <leader>cf <Action>(ReformatCode)

@@ -11,6 +11,8 @@ Plug 'mg979/vim-visual-multi'
 "                                   writing                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
 " add space between chinese and ascii
 Plug 'hotoo/pangu.vim' 
 " autocmd BufWritePre *.markdown,*.md,*.wiki call PanGuSpacing()
