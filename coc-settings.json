@@ -1,5 +1,5 @@
 {
-  "snippets.userSnippetsDirectory": "/Users/htao/.config/nvim/coolsnips/",
+  "snippets.userSnippetsDirectory": "~/.config/nvim/coolsnips/",
   "snippets.ultisnips.enable": true,
   
   "pyright.enable": true,
@@ -7,7 +7,7 @@
   "python.formatting.provider":"autopep8",
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
-  "python.pythonPath": "/Users/htao/.local/pyenv/shims/python",
+  "python.pythonPath": "~/pyenv/shims/python",
     // coc-yank 
   "yank.highlight.enable":true,
   "yank.highlight.duration":500,
