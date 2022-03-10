@@ -6,6 +6,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'mg979/vim-visual-multi'
 
+Plug 'rizzatti/dash.vim'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   writing                                    "
@@ -20,6 +22,7 @@ Plug 'hotoo/pangu.vim'
 Plug 'godlygeek/tabular'
 " support chinese input source 
 Plug 'lyokha/vim-xkbswitch'
+Plug 'davidhalter/jedi-vim'
 let g:XkbSwitchEnabled =1  
 
 " autopair
@@ -115,6 +118,7 @@ let g:fern#disable_drawer_auto_resize=0
 let g:fern#disable_drawer_auto_winfixwidth=1
 let g:fern#mapping#fzf#disable_default_mappings = 1
 let g:fern#drawer_width = 25
+" let g:fern#default_hidden=1
 " if has_key(plugs, 'glyph-palette') 
   augroup my-glyph-palette
     autocmd! *
@@ -144,7 +148,7 @@ function! s:init_fern() abort
   nmap <buffer> d <Plug>(fern-action-trash)
   nmap <buffer> m <Plug>(fern-action-move)
   nmap <buffer> M <Plug>(fern-action-rename)
-  nmap <buffer> h <Plug>(fern-action-hidden-toggle)
+  nmap <buffer> h <Plug>(fern-action-hidden:toggle)
   nmap <buffer> r <Plug>(fern-action-reload)
   nmap <buffer> o <Plug>(fern-action-open:select)
   nmap <buffer> s <Plug>(fern-action-open:split)

@@ -7,3 +7,4 @@ vimplug/
 autoload/plug.vim
 map.txt
 bookmarks
+custom.vim
