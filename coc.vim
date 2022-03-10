@@ -5,7 +5,7 @@ let g:coc_global_extensions = [
   \ 'coc-pyright', 'coc-pydocstring',
   \ 'coc-json', 'coc-vimlsp',
   \ 'coc-texlab', 'coc-markdownlint', 
-  \ 'coc-snippets', 'coc-ultisnips',
+  " \ 'coc-snippets', 'coc-ultisnips',
   \ 'coc-highlight', 
   \ 'coc-ci',
   \ ]
